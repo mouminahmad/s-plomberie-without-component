@@ -1,26 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/header/Header.astro';
-import PageHeader from '../components/header/PageHeader.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Import SEO-friendly place names for dynamic link generation
-import { seoPlaces } from '../data/seo_places';
+import { seoPlaces } from "../data/seo_places";
+
+// Page Header
+const header = {
+  title1: "Plomberie sanitaire En proximité et en urgence",
+  title2: "",
+};
+// Page Header
 ---
 
 <Layout
   title="Plomberie sanitaire en proximité et/ou en urgence, S-Plomberie"
   description="S-Plomberie est spécialisée dans le dépannage d'urgence en Belgique. Qu'il s'agisse d'un entretien ou d'une réparation, nous mettons à votre disposition nos services de plomberie sanitaire et de débouchage de canalisation"
 >
-  <!-- Site header component -->
-  <Header />
-
   <!-- Page header with main title -->
-  <PageHeader title1="Plomberie sanitaire En proximité et en urgence" />
-
+  <section class="page-header">
+    <div class="page-header__bg" style="background-color: #4683c4;"></div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="page-header__wrapper">
+            <div class="page-header__content">
+              <h1 class="text-center">
+                {header.title1}<br />{header.title2}
+              </h1>
+              <div class="text-center">
+                <a
+                  href="tel:0474565656"
+                  class="thm-btn"
+                  data-text="Plombier en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474/56.56.56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page header with main title -->
   <!-- Main content container -->
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex flex-wrap p-3">
-
       <!-- List of plumber services by location -->
       <div class="w-full xl:w-1/2 service my-12">
         <ul>
@@ -36,7 +61,6 @@ import { seoPlaces } from '../data/seo_places';
           }
         </ul>
       </div>
-
     </div>
   </div>
 </Layout>

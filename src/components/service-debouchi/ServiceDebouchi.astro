@@ -1,0 +1,194 @@
+---
+const url = "/";
+import imgBanner from "../../assets/images/services/s-plomberie-01.jpg";
+import { seo_places2 } from "../../data/seo_places";
+import { seoKeys } from "../../data/seo/debouchage";
+---
+
+<section class="blog-details">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap -mx-4">
+      <!-- Main Content -->
+      <div class="w-full lg:w-7/12 px-4">
+        <div class="blog-details__left">
+          <div class="blog-details__img">
+            <img
+              src={imgBanner.src}
+              alt="Plomberie sanitaire , dépannage en urgence - 0474 56 56 56"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="blog-details__content">
+            <h2 class="blog-details__title">
+              Débouchage de canalisations rapide et efficace
+            </h2>
+            <p class="blog-details__text-1">
+              Notre entreprise <strong>S-Plomberie</strong> propose des services
+              de <strong>débouchage de canalisations</strong> pour les particuliers
+              et les professionnels. Nous intervenons rapidement et efficacement
+              pour <strong>déboucher toutes vos canalisations</strong>, que ce
+              soit dans votre cuisine, votre salle de bain ou vos toilettes.
+              Nous utilisons des outils professionnels de haute qualité pour
+              garantir un résultat optimal et durable. Faites confiance à notre
+              équipe de plombiers qualifiés pour résoudre tous vos problèmes de
+              canalisation bouchée.
+            </p>
+            <h2 class="blog-details__title">
+              Inspection vidéo de canalisations pour une détection précise des
+              problèmes
+            </h2>
+            <p class="blog-details__text-1">
+              Pour détecter avec précision les problèmes de vos canalisations,
+              notre entreprise <strong>S-Plomberie</strong> propose un service d'inspection
+              vidéo. Nous utilisons une caméra pour explorer l'intérieur de vos canalisations
+              et localiser les obstructions, les fissures et les fuites. Grâce à
+              cette technologie de pointe, nous pouvons vous fournir un diagnostic
+              précis et des solutions adaptées à vos besoins.
+            </p>
+            <h2 class="blog-details__title">
+              Débouchage de canalisations écologique et respectueux de
+              l'environnement
+            </h2>
+            <p class="blog-details__text-1">
+              Chez S-Plomberie, nous sommes soucieux de l'environnement et nous
+              proposons des solutions de <strong>débouchage écologiques</strong>
+              pour vos canalisations. Nous utilisons des produits naturels et respectueux
+              de l'environnement pour déboucher vos canalisations et éviter l'utilisation
+              de produits chimiques nocifs. Faites confiance à notre <strong
+                >équipe de plombiers professionnels</strong
+              > pour un débouchage respectueux de l'environnement.
+            </p>
+            <h2 class="blog-details__title">
+              Intervention d'urgence pour les problèmes de canalisation bouchée
+            </h2>
+            <p class="blog-details__text-1">
+              En cas d'urgence pour une <strong>canalisation bouchée</strong>,
+              notre entreprise S-Plomberie est disponible 24h/24 et 7j/7 pour
+              une intervention rapide et efficace. Nous sommes équipés pour
+              résoudre tous les problèmes de canalisation bouchée et nous
+              garantissons une intervention rapide pour minimiser les dommages
+              potentiels dans votre maison ou votre entreprise. Faites appel à
+              notre service d'urgence pour un débouchage de canalisation rapide
+              et professionnel.
+            </p>
+
+            <div class="about-three__content-btn">
+              <a
+                onclick="document.getElementById('devisModal').classList.remove('hidden')"
+                style="cursor: pointer"
+                class="thm-btn"
+                data-text="Demande de devis">Demande de devis</a
+              >
+              <a
+                href="tel:0474 56 56 56"
+                class="thm-btn"
+                data-text="Déboucheur en urgence : 0474 56 56 56"
+                >Déboucheur en urgence : 0474 56 56 56</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="w-full lg:w-5/12 mt-10 lg:mt-0">
+        <div class="sidebar">
+          <aside class="space-y-6">
+            <!-- --- Category ---  -->
+            <div class="sidebar__single sidebar__category">
+              <h3 class="sidebar__title">Nos services</h3>
+              <ul class="sidebar__category-list">
+                <li>
+                  <a href="/plomberie-sanitaire">Plomberie </a>
+                </li>
+                <li class="active">
+                  <a href="/debouchage-canalisation">Débouchage</a>
+                </li>
+                <li>
+                  <a href="/contact">Contactez-nous</a>
+                </li>
+              </ul>
+            </div>
+            <!-- --- Category ---  -->
+
+            <!-- --- support ----- -->
+
+            <div class="sidebar__single sidebar__support">
+              <div
+                class="sidebar__support-bg"
+                style={`background-image: url();`}
+              >
+              </div>
+              <h3 class="sidebar__suppot-title">Une question ? Un besoin?</h3>
+              <div class="mt-10">
+                <a
+                  href="tel:0474 56 56 56"
+                  class="thm-btn"
+                  data-text="0474 56 56 56"
+                >
+                  0474 56 56 56</a
+                >
+              </div>
+            </div>
+
+            <!-- --- support ----- -->
+
+            <!-- Tags -->
+
+            <div class="sidebar__single sidebar__tags">
+              <ul class="sidebar__tags-list">
+                {
+                  Object.entries(seoKeys).map(([slug, label]) => (
+                    <li>
+                      <a
+                        href={`/service-debouchage/${slug}`}
+                        class="hover:underline"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))
+                }
+                <li>
+                  <a href="/liens_SL_Debouchage" class="hover:underline"
+                    >Les autres services Débouchage</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Cities -->
+
+            <div class="sidebar__single sidebar__tags">
+              <ul class="sidebar__tags-list">
+                {
+                  Object.entries(seo_places2).map(([slug, value]) => (
+                    <li>
+                      <a
+                        href={`${url}${slug === "bruxelles" ? "entreprise-de-debouchage/debouchage/" : "prestation-debouchage/debouchage/"}${slug}`}
+                        class="hover:underline"
+                      >
+                        {value}
+                      </a>
+                    </li>
+                  ))
+                }
+                <li>
+                  <a href={`${url}liens_debouchage_villes_bruxelles`}
+                    >Services Débouchage pour les autres communes Bruxelles</a
+                  >
+                </li>
+                <li>
+                  <a href={`${url}liens_debouchage_communes_belgique`}
+                    >Service Débouchages pour les autres communes Belgique</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

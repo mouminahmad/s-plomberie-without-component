@@ -1,26 +1,52 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/header/Header.astro';
-import PageHeader from '../components/header/PageHeader.astro';
+import Layout from "../layouts/Layout.astro";
 
 // Import list of SEO-friendly place names for generating links dynamically
-import { seoPlaces } from '../data/seo_places';
+import { seoPlaces } from "../data/seo_places";
+
+// Page Header
+const header = {
+  title1: "Débouchage canalisation En proximité et en urgence",
+  title2: "",
+};
+// Page Header
 ---
 
 <Layout
   title="Débouchage canalisation en proximité et/ou en urgence, S-Plomberie"
   description="S-Plomberie specializes in emergency plumbing services in Belgium. Whether maintenance or repair, we provide sanitary plumbing and drain unclogging services."
 >
-  <!-- Site header component -->
-  <Header />
-
-  <!-- Page header with title -->
-  <PageHeader title1="Débouchage canalisation En proximité et en urgence" />
+  <!-- Page header with main title -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-color: #4683c4;"></div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="page-header__wrapper">
+            <div class="page-header__content">
+              <h1 class="text-center">
+                {header.title1}<br />{header.title2}
+              </h1>
+              <div class="text-center">
+                <a
+                  href="tel:0474565656"
+                  class="thm-btn"
+                  data-text="Plombier en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474/56.56.56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page header with main title -->
 
   <!-- Main content container -->
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex flex-wrap p-3">
-
       <!-- Services list section -->
       <div class="w-full xl:w-1/2 service my-12">
         <ul>
@@ -36,7 +62,6 @@ import { seoPlaces } from '../data/seo_places';
           }
         </ul>
       </div>
-
     </div>
   </div>
 </Layout>

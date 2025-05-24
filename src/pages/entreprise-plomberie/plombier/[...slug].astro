@@ -1,11 +1,14 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import Header from "../../../components/header/Header.astro";
-import PageHeader from "../../../components/header/PageHeader.astro";
-import Cta from "../../../components/cta/Cta.astro";
-import PourquoiNousChoisir from "../../../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro";
-import PlomberieTags from "../../../components/service-details/tags/PlomberieTags.astro";
+
 import imgBanner from "../../../assets/images/services/s-plomberie-01.jpg";
+import ctaBg from "../../../assets/images/cta-v1-bg.jpg";
+import img1 from "../../../assets/images/ressources/pourquoi-nous-choisir-01.jpg";
+import img2 from "../../../assets/images/ressources/pourquoi-nous-choisir-02.jpg";
+import img3 from "../../../assets/images/ressources/pourquoi-nous-choisir-03.jpg";
+import img4 from "../../../assets/images/ressources/pourquoi-nous-choisir-04.jpg";
+
+import { seoKeys } from "../../../data/seo/plomberie";
 import { seoPlaces } from "../../../data/seo_places";
 import { seo_places2 } from "../../../data/seo_places";
 
@@ -19,12 +22,43 @@ export const getStaticPaths = () => {
 };
 
 const { text } = Astro.props;
+
+// Page Header
+const header = {
+  title1: `Plombier ${text}`,
+  title2: "",
+};
+// Page Header
 ---
 
 <Layout title=`  S-Plomberie - Plomberie ${text} disponible 24/7`>
-  <Header />
-  <PageHeader title1=`Plombier ${text}` />
-
+  <!-- Page header with main title -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-color: #4683c4;"></div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="page-header__wrapper">
+            <div class="page-header__content">
+              <h1 class="text-center">
+                {header.title1}<br />{header.title2}
+              </h1>
+              <div class="text-center">
+                <a
+                  href="tel:0474565656"
+                  class="thm-btn"
+                  data-text="Plombier en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474/56.56.56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page header with main title -->
   <!-- Services Detail Section -->
   <section class="blog-details">
     <div class="container mx-auto px-4">
@@ -172,7 +206,28 @@ const { text } = Astro.props;
                 </div>
               </div>
 
-              <PlomberieTags />
+              <div class="sidebar__single sidebar__tags">
+                <ul class="sidebar__tags-list">
+                  {
+                    Object.entries(seoKeys).map(([slug, label]) => (
+                      <li>
+                        <a
+                          href={`/service-plomberie/${slug}`}
+                          class="hover:underline"
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  <li>
+                    <a href="/liens_SL_Plomberie" class="hover:underline"
+                      >Les autres services plomberie pour la commune Bruxelles</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
               <!-- sidebar - cities -->
               <div class="sidebar__single sidebar__tags">
                 <ul class="sidebar__tags-list">
@@ -216,6 +271,145 @@ const { text } = Astro.props;
     </div>
   </section>
 
-  <PourquoiNousChoisir />
-  <Cta />
+  <!-- Why choose us -->
+  <section class="why-choose-one-sec" style="background-color: #f2f3f5;">
+    <div class="container mx-auto px-4">
+      <!-- Bootstrap 'container' replaced -->
+      <div class="flex flex-wrap">
+        <!-- Bootstrap 'row' replaced -->
+        <div class="w-full xl:w-1/2">
+          <!-- Bootstrap 'col-xl-6' replaced -->
+          <div class="why-choose-one__content">
+            <div class="sec-title">
+              <div class="sec-title__tagline">
+                <div class="h6">Pourquoi nous chosir</div>
+                <span class="right"></span>
+              </div>
+              <h2 class="sec-title__title">
+                Service de plomberie et de débouchage canalisation
+              </h2>
+              <p
+                class="sec-title__text"
+                style="line-height: 30px; text-align: justify"
+              >
+                Chez <strong>S-Plomberie</strong>, nous bénéficions d'une
+                expérience de plus de <strong>7 ans</strong> en installation, réparation
+                d'équipement sanitaire et débouchage de canalisation. Nous maîtrisons
+                de ce fait parfaitement les différents problèmes qui peuvent survenir
+                dans une installation sanitaire et les solutions adéquates. À votre
+                demande, un plombier expérimenté de notre équipe se rendra à votre
+                domicile. Il s'assurera alors, selon le cas, du dépannage de votre
+                installation sanitaire ou du débouchage de votre canalisation. N'hésitez
+                donc pas à solliciter nos services de plomberie sanitaire et de débouchage
+                des canalisations en Belgique.
+              </p>
+              <div class="h4 mt-3">Une question en plomberie? Un besoin ?</div>
+              <div class="h4 mt-2">
+                Appelez-nous <a href="tel:0474 56 56 56">0474 56 56 56</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full xl:w-1/2">
+          <!-- Bootstrap 'col-xl-6' replaced -->
+          <div class="why-choose-one__img">
+            <div class="flex flex-wrap">
+              <!-- Bootstrap 'row' replaced -->
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <!-- col-xl-6 col-lg-6 col-md-6 -->
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img
+                      src={img1.src}
+                      alt="Service de plomberie et de débouchage canalisation en belgique"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img src={img2.src} alt="Plomberie sanitaire en belgique" />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img
+                      src={img3.src}
+                      alt="Entreprise de débouchage canalisation en blegique"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img
+                      src={img4.src}
+                      alt="Plomberie sanitaire En proximité et en urgence en belgique"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+
+  <!-- Call to action component -->
+  <section class="cta-one relative">
+    <!-- Background image with Astro import -->
+    <div
+      class="cta-one__bg absolute inset-0 z-0 bg-cover bg-center"
+      style={`background-image: url(${ctaBg.src});`}
+    >
+    </div>
+
+    <!-- Content inside container -->
+    <div class="container mx-auto relative z-10 py-16">
+      <div class="grid grid-cols-1">
+        <div class="cta-one__inner text-center">
+          <h2 class="text-2xl font-semibold text-white">
+            S-Plomberie est à votre Service pour Toute Intervention en urgence
+            24h/7j
+          </h2>
+
+          <ul class="cta-one__list my-4">
+            <li>
+              <p><strong>Plomberie</strong></p>
+            </li>
+            <li>
+              <p><strong>Débouchage</strong></p>
+            </li>
+          </ul>
+
+          <div class="cta-one__btn-box">
+            <div class="btn-box1">
+              <a
+                href="tel:+32474565656"
+                class="thm-btn"
+                data-text="Nous appeler"
+                >0474 56 56 56
+              </a>
+            </div>
+            <div class="btn-box2">
+              <a
+                onclick="document.getElementById('devisModal').classList.remove('hidden')"
+                style="cursor: pointer"
+                class="thm-btn"
+                data-text="Demande de devis">Demande de divs</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Call to action component -->
 </Layout>

@@ -1,16 +1,47 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/header/Header.astro";
-import PageHeader from "../../components/header/PageHeader.astro";
 import { seo_keys } from "../../data/seoDebouchageBruxelleKey";
+
+// Page Header
+const header = {
+  title1: "Entreprise de débouchage canalisation",
+  title2: "",
+};
+// Page Header
 ---
 
 <Layout
   title="Entreprise de débouchage canalisation , S-Plomberie"
   description="S-Plomberie est une entreprise de débouchage de canalisations travaille depuis plus de 5 ans dans le domaine du débouchage. Nous sommes devenus une référence pour fixer vos difficultés de canalisations bouchées."
 >
-  <Header />
-  <PageHeader title1="Entreprise de débouchage canalisation" />
+   <!-- Page header with main title -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-color: #4683c4;"></div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="page-header__wrapper">
+            <div class="page-header__content">
+              <h1 class="text-center">
+                {header.title1}<br />{header.title2}
+              </h1>
+              <div class="text-center">
+                <a
+                  href="tel:0474565656"
+                  class="thm-btn"
+                  data-text="Plombier en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474/56.56.56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page header with main title -->
+
 
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex flex-wrap p-3">

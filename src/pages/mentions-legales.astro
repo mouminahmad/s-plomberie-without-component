@@ -1,21 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/header/Header.astro';
-import Cta from '../components/cta/Cta.astro';
-import PageHeader from '../components/header/PageHeader.astro';
-import PourquoiNousChoisir from '../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro';
-import ServiceDetails from '../components/service-details/ServiceDetails.astro';
+
+// Page Header
+const header = {
+  title1: "Mentions légales",
+  title2: "",
+};
+// Page Header
 ---
 
 <Layout
   title="S-Plomberie: Mentions légales 0474/56.56.56"
   description="Chez S-Plomberie, nous bénéficions d'une expérience de plus de 20 ans en installation, réparation d'équipement sanitaire et débouchage de canalisation. "
 >
-  <!-- Header component with 'current03' set to 'current' to highlight menu -->
-  <Header />
-
+  
+    <!-- Page header with main title -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-color: #4683c4;"></div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="page-header__wrapper">
+            <div class="page-header__content">
+              <h1 class="text-center">
+                {header.title1}<br />{header.title2}
+              </h1>
+              <div class="text-center">
+                <a
+                  href="tel:0474565656"
+                  class="thm-btn"
+                  data-text="Plombier en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474/56.56.56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Page header with main title -->
-  <PageHeader title1="Mentions légales" title2="" />
 
 <section class="">
   <div class="max-w-7xl mx-auto px-4">

@@ -1,24 +1,187 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/header/Header.astro';
-import PageHeader from '../components/header/PageHeader.astro';
-import ContactMap from '../components/contact-map/ContactMap.astro';
-import ContactPage from '../components/contact-page/ContactPage.astro';
+import Layout from "../layouts/Layout.astro";
+
+// Page Header
+const header = {
+  title1: "Contactez-nous S-Plomberie",
+  title2: "",
+};
+// Page Header
 ---
 
 <Layout
   title="Plombier déboucheur en urgence contactez-nous : S-Plomberie"
   description="Contactez S-Plomberie, une expérience de plus de 7 ans en installation, réparation d'équipement plomberie sanitaire et débouchage des canalisations."
 >
-  <!-- Header with the 5th menu item highlighted -->
-  <Header/>
-
-  <!-- Page header with the contact page title -->
-  <PageHeader title1="Contactez-nous S-Plomberie" />
+  <!-- Page header with main title -->
+  <section class="page-header">
+    <div class="page-header__bg" style="background-color: #4683c4;"></div>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="page-header__wrapper">
+            <div class="page-header__content">
+              <h1 class="text-center">
+                {header.title1}<br />{header.title2}
+              </h1>
+              <div class="text-center">
+                <a
+                  href="tel:0474565656"
+                  class="thm-btn"
+                  data-text="Plombier en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474/56.56.56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page header with main title -->
 
   <!-- Map section showing contact location -->
-  <ContactMap />
+
+  <section class="contact-page-google-map">
+    <div class="mx-auto px-4 max-w-7xl">
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4 xl:w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d727004.2613180777!2d4.040611506155901!3d50.65332958214706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6f999d54df317491%3A0x4669eccae1ba2854!2sS-Plomberie%20%3A%20Expert%20en%20plomberie%20et%20en%20d%C3%A9bouchage!5e0!3m2!1sfr!2sma!4v1667417432657!5m2!1sfr!2sma"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Map section showing contact location -->
 
   <!-- Contact form and details section -->
-  <ContactPage />
+  <section class="contact-page">
+    <div class="max-w-screen-xl mx-auto px-4">
+      <div class="flex flex-wrap -mx-4">
+        <!--Start Contact Page Content-->
+        <div class="w-full md:w-5/12 px-4">
+          <div class="contact-page__content">
+            <div class="title">
+              <h2>Nous contacter</h2>
+            </div>
+
+            <div class="contact-page__content-single">
+              <div class="contact-page__content-single-inner">
+                <div class="icon-box">
+                  <span class="icon-pin"></span>
+                </div>
+                <div class="content-box">
+                  <h2>Adresse</h2>
+                  <p>Bruxelles et Wallonie</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-page__content-single">
+              <div class="contact-page__content-single-inner">
+                <div class="icon-box">
+                  <span class="icon-phone-call-1"></span>
+                </div>
+                <div class="content-box">
+                  <h2>Téléphone</h2>
+                  <p class="number1">
+                    <a href="tel:0474 56 56 56">0474 56 56 56</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-page__content-single">
+              <div class="contact-page__content-single-inner">
+                <div class="icon-box">
+                  <span class="icon-email"></span>
+                </div>
+                <div class="content-box">
+                  <h2>Email</h2>
+                  <p class="email1">
+                    <a href="mailto:contact@s-plomberie.be"
+                      >contact@s-plomberie.be</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Contact Page Content-->
+
+        <!--Start Contact Page Form-->
+        <div class="w-full md:w-7/12 px-4">
+          <div class="contact-page__form">
+            <form class="comment-one__form">
+              <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 px-4">
+                  <div class="comment-form__input-box">
+                    <input type="text" placeholder="Nom" id="nom" name="nom" />
+                  </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4">
+                  <div class="comment-form__input-box">
+                    <input
+                      type="email"
+                      placeholder="Adresse email"
+                      name="email"
+                      id="email"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 px-4">
+                  <div class="comment-form__input-box">
+                    <input
+                      type="text"
+                      placeholder="N° téléphone"
+                      name="tel"
+                      id="tel"
+                    />
+                  </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4">
+                  <div class="comment-form__input-box">
+                    <input
+                      type="email"
+                      placeholder="Sujet"
+                      name="sujet"
+                      id="sujet"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap -mx-4">
+                <div class="w-full px-4">
+                  <div class="comment-form__input-box">
+                    <textarea
+                      name="message"
+                      id="message"
+                      placeholder="Votre message"></textarea>
+                  </div>
+                  <div id="success01"></div>
+                  <button
+                    class="thm-btn comment-form__btn"
+                    data-text="Envoyer"
+                    type="button"
+                    onclick="envoyerContact()">Envoyer</button
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--End Contact Page Form-->
+      </div>
+    </div>
+  </section>
 </Layout>
