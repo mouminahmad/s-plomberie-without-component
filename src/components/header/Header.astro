@@ -1,8 +1,8 @@
 ---
 import logo from "../../assets/images/logo-s-plomberie.png";
 import Whitelogo from "../../assets/images/logo-white-s-plomberie.png";
+import img from "../../assets/images/backgrounds/bgModal.jpg";
 import SideBar from "./SideBar.astro";
-import ModelForm from "../form/ModelForm.astro";
 
 // Get current path
 const { url } = Astro.request;
@@ -134,7 +134,111 @@ const current05 = isCurrent('/contact') ? 'current' : '';
 </div>
 
 <SideBar />
-<ModelForm />
+
+<!-- --- Model Form ---  -->
+ <div
+  id="devisModal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed inset-0 z-[9999] hidden overflow-y-auto"
+  aria-labelledby="labelModalDevis"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="flex items-center justify-center min-h-screen px-4 py-6">
+    <div
+      class="relative w-full max-w-3xl bg-cover bg-center bg-no-repeat rounded-lg shadow-lg"
+      style={`background-image: url('${img.src}');`}
+    >
+      <div
+        class="flex items-center justify-between px-4 py-3 bg-[#4683c4] rounded-t-lg"
+      >
+        <h5 class="!text-white text-lg font-semibold" id="labelModalDevis">
+          Demande de devis
+        </h5>
+        <button
+          type="button"
+          class="text-white text-xl leading-none"
+          onclick="document.getElementById('devisModal').classList.add('hidden')"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="p-6 rounded-b-lg">
+        <div class="grid grid-cols-1 gap-4">
+          <!--Start Contact Page Form-->
+          <div>
+            <form class="comment-one__form">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="comment-form__input-box">
+                  <input
+                    type="text"
+                    placeholder="Nom"
+                    name="nom04"
+                    id="nom04"
+                    class="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+                <div class="comment-form__input-box">
+                  <input
+                    type="email"
+                    placeholder="Adresse email"
+                    name="email04"
+                    id="email04"
+                    class="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div class="comment-form__input-box">
+                  <input
+                    type="text"
+                    placeholder="N° téléphone"
+                    name="tel04"
+                    id="tel04"
+                    class="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+                <div class="comment-form__input-box">
+                  <input
+                    type="text"
+                    placeholder="Sujet"
+                    name="sujet04"
+                    id="sujet04"
+                    class="w-full p-3 border border-gray-300 rounded"
+                  />
+                </div>
+              </div>
+              <div class="mt-1">
+                <div class="comment-form__input-box">
+                  <textarea
+                    name="message04"
+                    id="message04"
+                    placeholder="Votre message"
+                    class="w-full p-3 border border-gray-300 rounded h-32 resize-none"
+                  ></textarea>
+                </div>
+                <div id="success04" class="mt-2"></div>
+                <button
+                  type="button"
+                  onclick="envoyerDemandeDeDevis()"
+                  data-text="Envoyer"
+                  class="thm-btn comment-form__btn mt-4"
+                >
+                  Envoyer
+                </button>
+              </div>
+            </form>
+          </div>
+          <!--End Contact Page Form-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- --- Model Form ---  -->
+
 
 <div class="stricky-header stricked-menu main-menu">
   <div class="sticky-header__content"></div>
