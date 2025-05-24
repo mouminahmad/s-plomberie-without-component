@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import Cta from '../components/cta/Cta.astro';
+import PageHeader from '../components/header/PageHeader.astro';
+import AboutSection2 from '../components/about-section/AboutSection2.astro';
+import Services from '../components/services/Services.astro';
+---
+
+<Layout
+  title="Travaux de plomberie et débouchage en urgence - 0474 56 56 56"
+  description="S-Plomberie, nous bénéficions d'une expérience de plus de 20 ans en installation, réparation d'équipement plomberie sanitaire et débouchage des canalisations."
+>
+  <!-- Header with the second menu item highlighted -->
+  <Header/>
+
+  <!-- Page header with main and subtitle -->
+  <PageHeader title1="Travaux de plomberie" title2="et de débouchage" />
+
+  <!-- About section component -->
+  <AboutSection2 />
+
+  <!-- Services section component -->
+  <Services />
+
+  <!-- Call to action section -->
+  <Cta />
+</Layout>

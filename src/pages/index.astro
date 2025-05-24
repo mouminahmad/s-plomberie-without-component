@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Header from '../components/header/Header.astro';
+import Hero from '../components/hero/Hero.astro';
+import AboutSection1 from '../components/about-section/AboutSection1.astro';
+import Services from '../components/services/Services.astro';
+import AppointmentSection from '../components/appointment-section/AppointmentSection.astro';
+import PourquoiNousChoisir from '../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro';
+import Testimonials from '../components/testimonials/Testimonials.astro';
+import Cta from '../components/cta/Cta.astro';
+
+import slider01 from '../assets/images/slider/slider-01.jpg';
+import slider02 from '../assets/images/slider/slider-02.jpg';
+import slider03 from '../assets/images/slider/slider-03.jpg';
+import imgUrl from '../assets/images/apropos-sos-plomberie-debouchage.jpg';
+
+const slides = [
+  {
+    image: slider01.src,
+    heading: "Plombier d'urgence : Service disponible 24/7",
+    link: "plomberie-en-urgence",
+    btnText: "En savoir plus",
+    containerClasses: "mx-auto px-4 max-w-screen-xl",
+  },
+  {
+    image: slider01.src,
+    heading: "Dépannage plomberie à proximité de chez vous",
+    link: "plomberie-sanitaire",
+    btnText: "En savoir plus",
+    containerClasses: "mx-auto px-4",
+  },
+  {
+    image: slider02.src,
+    heading: `Débouchage Canalisation<br/>24h/24 et 7J/7`,
+    link: "debouchage-canalisation",
+    btnText: "En savoir plus",
+    containerClasses: "mx-auto px-4 pl-0",
+    contentClasses: "text-center",
+  },
+  {
+    image: slider03.src,
+    heading: "Plombier ou Déboucheur de Canalisation en urgence",
+    link: "contact",
+    btnText: "Nous contacter",
+    containerClasses: "mx-auto px-4",
+  },
+];
+---
+
+<Layout title="Débouchage canalisation dépannage plomberie - 0474 56 56 56" description="Pour vos problèmes de plomberie sanitaire et de débouchage de canalisations, S-Plomberie et ses équipes est votre partenaire privilégié en Belgique ">
+  <!-- Header navigation -->
+  <Header />
+
+  <!-- Hero slider -->
+  <Hero slides={slides} />
+
+  <!-- About section with image -->
+  <AboutSection1 imageUrl={imgUrl.src} />
+
+  <!-- Services section -->
+  <Services />
+
+  <!-- Appointment booking -->
+  <AppointmentSection />
+
+  <!-- Why choose us -->
+  <PourquoiNousChoisir />
+
+  <!-- Testimonials -->
+  <Testimonials />
+
+  <!-- Call to action -->
+  <Cta />
+</Layout>

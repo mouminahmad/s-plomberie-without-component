@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header/Header.astro";
+import PageHeader from "../components/header/PageHeader.astro";
+
+// Import SEO keys for dynamic service links
+import { seo_keys } from "../data/seoDebouchageBruxelleKey";
+---
+
+<Layout
+  title="Entreprise de débouchage canalisation * S-Plomberie"
+  description="S-Plomberie est une entreprise de débouchage de canalisations travaille depuis plus de 5 ans dans le domaine du débouchage. Nous sommes devenus une référence pour fixer vos difficultés de canalisations bouchées."
+>
+  <!-- Site header -->
+  <Header />
+
+  <!-- Page title header -->
+  <PageHeader title1="Entreprise de débouchage canalisation" />
+
+  <!-- Main content container -->
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-wrap p-3">
+
+      <!-- List of débouchage services by SEO keys -->
+      <div class="w-full xl:w-1/2 service my-12">
+        <ul>
+          {
+            // Map through seo_keys to generate service links
+            Object.entries(seo_keys).map(([slug, name]) => (
+              <li>
+                <a href={`/service-debouchage/${slug}`}>
+                  {name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</Layout>

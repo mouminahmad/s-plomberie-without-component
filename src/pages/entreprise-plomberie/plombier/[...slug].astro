@@ -1,0 +1,221 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/header/Header.astro";
+import PageHeader from "../../../components/header/PageHeader.astro";
+import Cta from "../../../components/cta/Cta.astro";
+import PourquoiNousChoisir from "../../../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro";
+import PlomberieTags from "../../../components/service-details/tags/PlomberieTags.astro";
+import imgBanner from "../../../assets/images/services/s-plomberie-01.jpg";
+import { seoPlaces } from "../../../data/seo_places";
+import { seo_places2 } from "../../../data/seo_places";
+
+const url = "/";
+
+export const getStaticPaths = () => {
+  return Object.entries(seoPlaces).map(([slug, text]) => ({
+    params: { slug },
+    props: { text },
+  }));
+};
+
+const { text } = Astro.props;
+---
+
+<Layout title=`  S-Plomberie - Plomberie ${text} disponible 24/7`>
+  <Header />
+  <PageHeader title1=`Plombier ${text}` />
+
+  <!-- Services Detail Section -->
+  <section class="blog-details">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap -mx-4">
+        <!-- Main Content -->
+        <div class="w-full lg:w-7/12 px-4">
+          <div class="blog-details__left">
+            <div class="blog-details__img">
+              <img
+                src={imgBanner.src}
+                alt="Plomberie sanitaire , dépannage en urgence - 0474 56 56 56"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="blog-details__content">
+              <h2 class="blog-details__title">
+                Dépannage plomberie rapide et efficace à {text} avec S-Plomberie
+              </h2>
+              <p class="blog-details__text-1">
+                Chez <strong>S-Plomberie</strong>, nous comprenons l'urgence
+                d'un <strong>problème de plomberie</strong> et nous sommes là pour
+                vous aider rapidement. <strong
+                  >Nos plombiers professionnels</strong
+                > à {text} sont disponibles 24 heures sur 24 et 7 jours sur 7 pour
+                répondre à vos appels d'urgence de plomberie. Nous nous engageons
+                à fournir un service de qualité et fiable pour résoudre rapidement
+                tous vos problèmes de <strong>plomberie</strong>, que ce soit
+                des fuites d'eau, des canalisations bouchées ou des problèmes de
+                chauffage.
+              </p>
+
+              <h2 class="blog-details__title">
+                Installation de systèmes de plomberie sur mesure pour votre
+                entreprise à {text}
+              </h2>
+              <p class="blog-details__text-1">
+                Chez <strong>S-Plomberie</strong>, nous comprenons que chaque
+                entreprise a des besoins de <strong>plomberie uniques</strong>.
+                C'est pourquoi nous proposons des <strong
+                  >solutions de plomberie sur mesure</strong
+                > pour votre entreprise à {text}. <strong
+                  >Nos plombiers qualifiés</strong
+                > travaillent avec vous pour concevoir un système de plomberie adapté
+                à vos besoins spécifiques, qu'il s'agisse de l'installation d'un
+                nouveau système de chauffage, de l'ajout de nouvelles conduites d'eau
+                ou de la mise à jour de votre système de plomberie existant. Nous
+                sommes fiers de fournir un service de qualité supérieure et personnalisé
+                à toutes les entreprises de {text}.
+              </p>
+
+              <h2 class="blog-details__title">
+                Réparation de fuites d'eau et de canalisations bouchées à {text}
+              </h2>
+              <p class="blog-details__text-1">
+                Les fuites d'eau et les canalisations bouchées peuvent causer
+                des dégâts importants dans votre maison ou votre entreprise à {
+                  text
+                }. Chez S-Plomberie, nous avons <strong
+                  >une équipe de plombiers professionnels</strong
+                > qualifiés pour réparer rapidement et efficacement toutes les fuites
+                d'eau et les canalisations bouchées. Nous utilisons des techniques
+                modernes pour localiser les fuites et les obstructions, et nous travaillons
+                avec soin pour minimiser les dommages. Nous sommes là pour vous aider
+                à résoudre rapidement tous vos problèmes de plomberie à {text}.
+              </p>
+
+              <h2 class="blog-details__title">
+                Entretien préventif de la plomberie pour éviter les problèmes
+                futurs à {text}
+              </h2>
+              <p class="blog-details__text-1">
+                Chez <strong>S-Plomberie</strong>, nous savons que l'entretien
+                préventif de votre système de plomberie est essentiel pour
+                éviter les problèmes futurs à {text}. C'est pourquoi nous
+                proposons des services d'entretien préventif de la plomberie
+                pour les particuliers et les entreprises. Nos <strong
+                  >plombiers qualifiés</strong
+                > effectuent des inspections régulières de votre système de plomberie
+                pour identifier les problèmes potentiels avant qu'ils ne deviennent
+                des problèmes majeurs. Nous proposons également des services de nettoyage
+                et de maintenance pour aider à prolonger la durée de vie de votre
+                système de plomberie. Contactez-nous dès aujourd'hui pour planifier
+                un entretien préventif pour votre maison ou votre entreprise à {
+                  text
+                }.
+              </p>
+
+              <div class="about-three__content-btn">
+                <a
+                  onclick="document.getElementById('devisModal').classList.remove('hidden')"
+                  style="cursor: pointer"
+                  class="thm-btn"
+                  data-text="Demande de devis">Demande de devis</a
+                >
+                <a
+                  href="tel:0474 56 56 56"
+                  class="thm-btn"
+                  data-text="Plomberie en urgence : 0474 56 56 56"
+                  >Plombier en urgence: 0474 56 56 56</a
+                >
+              </div>
+            </div>
+
+            <!-- Blog Content Placeholder -->
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="w-full lg:w-5/12 mt-10 lg:mt-0">
+          <div class="sidebar">
+            <aside class="space-y-6">
+              <!-- Category -->
+              <div class="sidebar__single sidebar__category">
+                <h3 class="sidebar__title">Nos services</h3>
+                <ul class="sidebar__category-list">
+                  <li class="active">
+                    <a href="/plomberie-sanitaire">Plomberie</a>
+                  </li>
+                  <li>
+                    <a href="/debouchage-canalisation">Débouchage</a>
+                  </li>
+                  <li>
+                    <a href="/contact">Contactez-nous</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Support -->
+              <div class="sidebar__single sidebar__support">
+                <div
+                  class="sidebar__support-bg"
+                  style={`background-image: url();`}
+                >
+                </div>
+                <h3 class="sidebar__suppot-title">Une question ? Un besoin?</h3>
+                <div class="mt-10">
+                  <a
+                    href="tel:0474 56 56 56"
+                    class="thm-btn"
+                    data-text="0474 56 56 56"
+                  >
+                    0474 56 56 56
+                  </a>
+                </div>
+              </div>
+
+              <PlomberieTags />
+              <!-- sidebar - cities -->
+              <div class="sidebar__single sidebar__tags">
+                <ul class="sidebar__tags-list">
+                  {
+                    Object.entries(seo_places2).map(([slug, value]) => (
+                      <li>
+                        <a
+                          href={`${url}${slug === "bruxelles" ? "entreprise-plomberie/plomberie" : "prestation-plomberie/plomberie"}/${slug}`}
+                          class="hover:underline"
+                        >
+                          {value}
+                        </a>
+                      </li>
+                    ))
+                  }
+
+                  <li>
+                    <a
+                      href={`${url}liens_keywordPlomberieEncoursBruxelles/plomberie`}
+                      >Plomberie pour les autres communes Bruxelles</a
+                    >
+                  </li>
+                  <li>
+                    <a href={`${url}liens_keywordPlomberieEncoursNV/plomberie`}
+                      >Plomberie pour les autres communes belgique</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href={`${url}depannage-plomberie/liens_plomberie_en_urgence`}
+                      >Plomberie en urgence</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- sidebar - cities -->
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PourquoiNousChoisir />
+  <Cta />
+</Layout>

@@ -1,0 +1,109 @@
+---
+import logo from "../../assets/images/logo-white-s-plomberie.png";
+---
+
+<!-- Sidebar -->
+<div class="xs-sidebar-group info-group info-sidebar">
+  <div class="xs-overlay xs-bg-black"></div>
+  <div class="xs-sidebar-widget">
+    <div class="sidebar-widget-container">
+      <div class="widget-heading">
+        <a href="#" class="close-side-widget">X</a>
+      </div>
+      <div class="sidebar-textwidget">
+        <div class="sidebar-info-contents">
+          <div class="content-inner">
+            <div class="logo">
+              <a href="<?=$url?>">
+                <img
+                  src={logo.src}
+                  alt="Logo de S-Plomberie"
+                  width="190"
+                  height="65"
+                />
+              </a>
+            </div>
+            <div class="content-box">
+              <div class="text-xl font-semibold">À propos</div>
+              <!-- replaced .h4 -->
+              <div class="inner-text">
+                <p>
+                  S-Plomberie vous propose ses services de Plomberie Sanitaire,
+                  Débouchage de canalisations (WC Toilette, des Égout,
+                  Débouchage avec Haute Pression etc)
+                </p>
+              </div>
+            </div>
+            <div class="form-inner">
+              <div class="text-xl font-semibold">Demande de devis</div>
+              <!-- replaced .h4 -->
+              <form action="" method="post">
+                <div class="mb-4">
+                  <!-- replaced .form-group -->
+                  <input
+                    type="text"
+                    name="nom03"
+                    id="nom03"
+                    placeholder="Nom"
+                    class="w-full border border-gray-300 rounded px-3 py-2"
+                  />
+                </div>
+                <div class="mb-4">
+                  <!-- replaced .form-group -->
+                  <input
+                    type="text"
+                    name="tel03"
+                    id="tel03"
+                    placeholder="N° téléphone"
+                    class="w-full border border-gray-300 rounded px-3 py-2"
+                  />
+                </div>
+                <div class="mb-4">
+                  <!-- replaced .form-group -->
+                  <textarea
+                    name="message"
+                    id="message03"
+                    placeholder="Message..."
+                    class="w-full border border-gray-300 rounded px-3 py-2"
+                  ></textarea>
+                </div>
+                <div class="mb-4">
+                  <!-- replaced .form-group -->
+                  <div id="success03"></div>
+                  <div class="btn-box">
+                    <button
+                      type="button"
+                      class="thm-btn"
+                      data-text="Envoyer"
+                      onclick="envoyerFormSideBar()">Envoyer</button
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-contact-info mt-3">
+              <!-- replaced .mt-3 -->
+              <div class="text-xl font-semibold">Nous contacter</div>
+              <!-- replaced .h4 -->
+              <ul>
+                <li>
+                  <span class="icon-maps-and-flags"></span> Wallonie-Bruxelles
+                </li>
+                <li>
+                  <span class="icon-phone-call-1"></span>
+                  <a href="tel:0474202020">0474 56 56 56</a>
+                </li>
+                <li>
+                  <span class="icon-email-1"></span>
+                  <a href="mailto:contact@s-plomberie.be"
+                    >contact@s-plomberie.be</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End sidebar widget content -->

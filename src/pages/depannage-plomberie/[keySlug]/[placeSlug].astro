@@ -1,0 +1,174 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Cta from "../../../components/cta/Cta.astro";
+import Header from "../../../components/header/Header.astro";
+import PageHeader from "../../../components/header/PageHeader.astro";
+import PourquoiNousChoisir from "../../../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro";
+
+import img from "../../..//assets/images/services/s-plomberie-01.jpg";
+import {
+  seoPlaces,
+  seo_keys,
+} from "../../../data/seoPlomberieUrgenceKeywordsVillesKey";
+
+export async function getStaticPaths() {
+  const paths = [];
+
+  for (const keySlug of Object.keys(seo_keys)) {
+    for (const placeSlug of Object.keys(seoPlaces)) {
+      paths.push({ params: { keySlug, placeSlug } });
+    }
+  }
+
+  return paths;
+}
+
+const { params } = Astro;
+const { keySlug, placeSlug } = params;
+
+const key = keySlug as keyof typeof seo_keys;
+const place = placeSlug as keyof typeof seoPlaces;
+
+const keyLabel = seo_keys[key] || keySlug;
+const placeLabel = seoPlaces[place] || placeSlug;
+---
+
+<Layout title={`${keyLabel} ${placeLabel} - Réparation rapide et fiable`}>
+  <Header />
+  <PageHeader title1={`${keyLabel} ${placeLabel}`} />
+  <!-- --- content ---  -->
+  <section class="blog-details">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-10/12 lg:mx-auto">
+          <div class="blog-details__left">
+            <div class="blog-details__img">
+              <img
+                src={img.src}
+                alt="Plomberie urgence Bruxelles- Réparation rapide et fiable"
+              />
+            </div>
+            <div class="blog-details__content">
+              <p class="blog-details__text-1">
+                Ne laissez pas une fuite d'eau causer des dommages à votre
+                propriété. Notre service de plomberie d'urgence à <strong
+                  >{placeLabel}</strong
+                > est disponible jour et nuit pour des éparations rapides et efficaces.
+              </p>
+              <h2 class="blog-details__title">
+                Nos services de plomberie d'urgence à <strong
+                  >{placeLabel}</strong
+                >
+              </h2>
+              <p class="blog-details__text-1">
+                Nous offrons des services de plomberie d'urgence rapides et
+                fiables à <strong>{placeLabel}</strong>. Nos plombiers
+                expérimentés sont disponibles 24 heures sur 24 et 7 jours sur 7
+                pour répondre à vos besoins en cas d'urgence de plomberie. Que
+                vous ayez une fuite d'eau, un évier bouché ou un problème de
+                chauffe-eau, nous avons les compétences et l'expertise
+                nécessaires pour résoudre le problème rapidement et
+                efficacement.
+              </p>
+              <p class="blog-details__text-1">
+                Nos services de plomberie d'urgence comprennent la réparation de
+                fuites d'eau, le débouchage de canalisations, la réparation de
+                chauffe-eau et bien plus encore. Nous utilisons les dernières
+                technologies et techniques pour résoudre les problèmes de
+                plomberie les plus complexes.
+              </p>
+              <p class="blog-details__text-1">
+                Notre équipe de plombiers d'urgence est équipée de tous les
+                outils nécessaires pour effectuer des réparations rapides et
+                efficaces. Nous sommes également fiers de notre service client
+                exceptionnel, avec des professionnels compétents et attentionnés
+                qui s'assurent que toutes vos préoccupations sont traitées de
+                manière professionnelle et à temps.
+              </p>
+
+              <h2 class="blog-details__title">
+                Réparation de fuites d'eau en urgence à <strong
+                  >{placeLabel}</strong
+                >
+              </h2>
+              <p class="blog-details__text-1">
+                Si vous avez une fuite d'eau dans votre maison ou votre
+                entreprise, notre équipe de plombiers d'urgence est là pour vous
+                aider. Nous offrons des services de réparation de fuites d'eau
+                en urgence à <strong>{placeLabel}</strong> pour vous aider à résoudre
+                rapidement et efficacement tout problème de fuite d'eau.
+              </p>
+              <p>
+                Nos plombiers expérimentés sont équipés des derniers outils et
+                équipements pour localiser et réparer les fuites d'eau, qu'il
+                s'agisse d'une petite fuite ou d'un gros dégât des eaux. Nous
+                comprenons à quel point il est important de réparer rapidement
+                une fuite d'eau, car elle peut causer des dommages importants à
+                votre propriété et augmenter votre facture d'eau.
+              </p>
+              <p>
+                Nous sommes disponibles 24 heures sur 24 et 7 jours sur 7 pour
+                répondre à vos besoins de réparation de fuites d'eau en urgence.
+                Notre équipe de plombiers professionnels et fiables vous
+                fournira un service rapide et efficace pour résoudre tout
+                problème de fuite d'eau.
+              </p>
+
+              <h2 class="blog-details__title">
+                Débouchage de canalisations 24/7 à <strong>{placeLabel}</strong>
+              </h2>
+              <p class="blog-details__text-1">
+                Si vous avez des problèmes de canalisations bouchées dans votre
+                maison ou votre entreprise à <strong>{placeLabel}</strong>,
+                notre équipe de plombiers d'urgence est disponible 24 heures sur
+                24 et 7 jours sur 7 pour vous aider. Nous offrons des services
+                de débouchage de canalisations rapides et efficaces pour
+                résoudre tout problème de canalisation bouchée.
+              </p>
+              <p>
+                Nos plombiers expérimentés sont équipés des derniers outils et
+                équipements pour résoudre les problèmes de canalisation bouchée.
+                Nous comprenons à quel point il est important de résoudre
+                rapidement un problème de canalisation bouchée, car cela peut
+                causer des dommages importants à votre propriété et créer une
+                situation insalubre.
+              </p>
+              <p>
+                Nous offrons des services de débouchage de canalisations pour
+                tous les types de canalisations, y compris les égouts, les
+                éviers, les toilettes et les douches. Nous utilisons des
+                techniques de débouchage de pointe pour éliminer tous les types
+                de bouchons, qu'il s'agisse de graisse, de cheveux ou d'autres
+                débris.
+              </p>
+              <p>
+                Contactez-nous dès maintenant pour des services de débouchage de
+                canalisations 24/7 à <strong>{placeLabel}</strong>. Nous sommes
+                prêts à vous aider à tout moment de la journée ou de la nuit.
+              </p>
+
+              <div class="about-three__content-btn">
+                <a
+                  onclick="document.getElementById('devisModal').classList.remove('hidden')"
+                  style="cursor: pointer"
+                  class="thm-btn"
+                  data-text="Demande de devis">Demande de devis</a
+                >
+                <a
+                  href="tel:0474 56 56 56"
+                  class="thm-btn"
+                  data-text="Plomberie en urgence : 0474 56 56 56"
+                  >Plombier en urgence: 0474 56 56 56</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- content ---  -->
+  <PourquoiNousChoisir />
+  <Cta />
+</Layout>

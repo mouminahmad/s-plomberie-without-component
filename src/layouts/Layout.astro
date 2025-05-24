@@ -1,0 +1,60 @@
+---
+import BaseHead from "../components/header/BaseHead.astro";
+import Footer from "../components/footer/Footer.astro";
+
+import "../styles/global.css";
+import "../styles/scrollbar.css";
+import "../styles/style.css";
+import "../styles/responsive.css";
+import "../styles/icomoon-icons/style.css";
+import "../styles/animate/animate.min.css";
+import "../styles/animate/custom-animate.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Default Title", description = "Default description" } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <slot />
+    <!--Start Preloader-->
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+    <!--End Preloader-->
+    <Footer />
+
+    <!-- External Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+      defer></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/script.js" is:inline defer></script>
+    <script src="/sidebar-content/jquery-sidebar-content.js" is:inline defer
+    ></script>
+    <script src="/js/modal.js" defer></script>
+
+    <!-- Swiper (Module Style) -->
+    <script type="module">
+      import "https://cdn.jsdelivr.net/npm/swiper/swiper-element-bundle.min.js";
+    </script>
+  </body>
+</html>

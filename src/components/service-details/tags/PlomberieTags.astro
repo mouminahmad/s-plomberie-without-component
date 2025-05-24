@@ -1,0 +1,22 @@
+---
+import { seoKeys } from "../../../data/seo/plomberie"; // Adjust path as needed
+const { url } = Astro.props;
+---
+
+<div class="sidebar__single sidebar__tags">
+  <ul class="sidebar__tags-list">
+    {
+      Object.entries(seoKeys).map(([slug, label]) => (
+        <li>
+          <a href={`/service-plomberie/${slug}`} class="hover:underline">
+            {label}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a href="/liens_SL_Plomberie" class="hover:underline"
+        >Les autres services plomberie pour la commune Bruxelles</a>
+    </li>
+  </ul>
+</div>

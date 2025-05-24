@@ -1,0 +1,222 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header/Header.astro";
+import PageHeader from "../../components/header/PageHeader.astro";
+import Cta from "../../components/cta/Cta.astro";
+import PourquoiNousChoisir from "../../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro";
+
+import { seo_keys } from "../../data/seoPlomberieSLKey";
+import { seoKeys } from "../../data/seo/plomberie";
+import imgBanner from "../../assets/images/services/s-plomberie-01.jpg";
+import { seo_places2 } from "../../data/seo_places";
+const url = "/";
+
+// Static paths
+export const getStaticPaths = () => {
+  return Object.entries(seo_keys).map(([slug, text]) => ({
+    params: { slug },
+    props: { text },
+  }));
+};
+
+const { text } = Astro.props;
+---
+
+<Layout title={`${text} dépannage en urgence * 0474 56 56 56`}>
+  <Header />
+  <PageHeader title1={`${text} en proximité et en urgence`} />
+
+  <!-- Services Detail Section -->
+  <section class="blog-details">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap -mx-4">
+        <!-- Main Content -->
+        <div class="w-full lg:w-7/12 px-4">
+          <div class="blog-details__left">
+            <div class="blog-details__img">
+              <img
+                src={imgBanner.src}
+                alt="Plomberie sanitaire , dépannage en urgence - 0474 56 56 56"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="blog-details__content">
+              <h2 class="blog-details__title">
+                Plomberie en Belgique : faites confiance à S-Plomberie pour tous
+                vos besoins
+              </h2>
+              <p class="blog-details__text-1">
+                Avec des années d'expérience dans le domaine de la plomberie,
+                S-Plomberie est votre partenaire de choix en Belgique pour tous
+                vos besoins en plomberie. Nous offrons une large gamme de
+                services, allant de l'installation et de la réparation de tuyaux
+                et de canalisations à la rénovation de salles de bains et de
+                cuisines. Faites confiance à notre équipe de professionnels
+                qualifiés pour résoudre tous vos problèmes de plomberie.
+              </p>
+
+              <h2 class="blog-details__title">
+                Urgence plombier en Belgique : disponible 24h/24 et 7j/7 avec
+                S-Plomberie
+              </h2>
+              <p class="blog-details__text-1">
+                Nous comprenons que les problèmes de plomberie peuvent survenir
+                à tout moment, c'est pourquoi nous sommes disponibles 24h/24 et
+                7j/7 pour répondre à vos besoins d'urgence en Belgique. Que vous
+                ayez une fuite d'eau ou une canalisation bouchée, notre équipe
+                de plombiers professionnels est prête à intervenir rapidement
+                pour résoudre vos problèmes de plomberie.
+              </p>
+
+              <h2 class="blog-details__title">
+                Débouchage de canalisations en Belgique : l'expertise de
+                S-Plomberie à votre service
+              </h2>
+              <p class="blog-details__text-1">
+                Les canalisations bouchées peuvent causer des problèmes de
+                plomberie majeurs, c'est pourquoi nous offrons un service de
+                débouchage de canalisations rapide et efficace en Belgique.
+                Grâce à notre équipement de pointe et à notre expertise, nous
+                pouvons résoudre tous vos problèmes de canalisations bouchées,
+                qu'il s'agisse de votre évier, de votre douche ou de votre
+                baignoire.
+              </p>
+
+              <h2 class="blog-details__title">
+                Réparation de fuites d'eau en Belgique : S-Plomberie, votre
+                partenaire de confiance
+              </h2>
+              <p class="blog-details__text-1">
+                Les fuites d'eau peuvent causer des dommages importants à votre
+                propriété, mais avec S-Plomberie, vous pouvez être sûr que vos
+                problèmes de fuites seront résolus rapidement et efficacement.
+                Notre équipe de plombiers qualifiés possède l'expertise
+                nécessaire pour localiser et réparer les fuites d'eau, ce qui
+                vous permet de vous concentrer sur les autres aspects importants
+                de votre vie quotidienne.
+              </p>
+
+              <div class="about-three__content-btn">
+                <a
+                  onclick="document.getElementById('devisModal').classList.remove('hidden')"
+                  style="cursor: pointer"
+                  class="thm-btn"
+                  data-text="Demande de devis">Demande de devis</a
+                >
+                <a
+                  href="tel:0474 56 56 56"
+                  class="thm-btn"
+                  data-text="Plomberie en urgence : 0474 56 56 56"
+                >
+                  Plombier en urgence: 0474 56 56 56
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="w-full lg:w-5/12 mt-10 lg:mt-0">
+          <div class="sidebar">
+            <aside class="space-y-6">
+              <!-- Category -->
+              <div class="sidebar__single sidebar__category">
+                <h3 class="sidebar__title">Nos services</h3>
+                <ul class="sidebar__category-list">
+                  <li class="active">
+                    <a href="/plomberie-sanitaire">Plomberie</a>
+                  </li>
+                  <li>
+                    <a href="/debouchage-canalisation">Débouchage</a>
+                  </li>
+                  <li>
+                    <a href="/contact">Contactez-nous</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Support -->
+              <div class="sidebar__single sidebar__support">
+                <div
+                  class="sidebar__support-bg"
+                  style={`background-image: url();`}
+                >
+                </div>
+                <h3 class="sidebar__suppot-title">Une question ? Un besoin?</h3>
+                <div class="mt-10">
+                  <a
+                    href="tel:0474 56 56 56"
+                    class="thm-btn"
+                    data-text="0474 56 56 56"
+                  >
+                    0474 56 56 56
+                  </a>
+                </div>
+              </div>
+
+              <!-- Plomberie Tags -->
+              <div class="sidebar__single sidebar__tags">
+                <ul class="sidebar__tags-list">
+                  {
+                    Object.entries(seoKeys).map(([slug, label]) => (
+                      <li>
+                        <a
+                          href={`/service-plomberie/${slug}`}
+                          class="hover:underline"
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  <li>
+                    <a href="/liens_SL_Plomberie" class="hover:underline">
+                      Les autres services {text}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- City Tags -->
+              <div class="sidebar__single sidebar__tags">
+                <ul class="sidebar__tags-list">
+                  {
+                    Object.entries(seo_places2).map(([slug, value]) => (
+                      <li>
+                        <a
+                          href={`${url}${slug === "bruxelles" ? "entreprise-plomberie/plomberie" : "prestation-plomberie/plomberie"}/${slug}`}
+                          class="hover:underline"
+                        >
+                          {value}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  <li>
+                    <a href="/liens_keywordPlomberieEncoursBruxelles/plomberie">
+                      Plomberie pour les autres communes Bruxelles
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/liens_keywordPlomberieEncoursNV/plomberie">
+                      Plomberie pour les autres communes belgique
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/depannage-plomberie/liens_plomberie_en_urgence">
+                      Plomberie en urgence
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PourquoiNousChoisir />
+  <Cta />
+</Layout>

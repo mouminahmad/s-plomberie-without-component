@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import PageHeader from '../components/header/PageHeader.astro';
+
+// Import SEO keys for dynamic plumbing service links
+import { seo_keys } from '../data/seoPlomberieSLKey';
+---
+
+<Layout
+  title="Plomberie en proximité et/ou en urgence S-Plomberie"
+  description="S-Plomberie est spécialisée dans le dépannage de plomberie sanitaire d'urgence en Belgique. Qu'il s'agisse d'un entretien ou d'une réparation, nous mettons à votre disposition nos services de plomberie sanitaire."
+>
+  <!-- Site header -->
+  <Header />
+
+  <!-- Page header with main title -->
+  <PageHeader title1="Plomberie sanitaire En proximité et en urgence" />
+
+  <!-- Main container for content -->
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-wrap p-3">
+
+      <!-- Plumbing services list section -->
+      <div class="w-full xl:w-1/2 service my-12">
+        <ul>
+          {
+            // Generate links dynamically from seo_keys data
+            Object.entries(seo_keys).map(([slug, name]) => (
+              <li>
+                <a href={`/service-plomberie/${slug}`}>
+                  {name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</Layout>

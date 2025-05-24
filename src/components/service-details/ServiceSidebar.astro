@@ -1,0 +1,64 @@
+---
+import PlomberieTags from "./tags/PlomberieTags.astro";
+import DebouchageTags from "./tags/DebouchageTags.astro";
+import PlomberieCities from "./cities/PlomberieCities.astro";
+import DebouchageCities from "./cities/DebouchageCities.astro";
+
+interface Props {
+  option01: string;
+  option02: string;
+  url: string;
+  selectedContent: "plomberie" | "debouchage";
+}
+
+const { option01, option02, url, selectedContent } = Astro.props as Props;
+---
+
+<aside class="space-y-6">
+  <!-- --- Category ---  -->
+  <div class="sidebar__single sidebar__category">
+    <h3 class="sidebar__title">Nos services</h3>
+    <ul class="sidebar__category-list">
+      <li class={option01}>
+        <a href="/plomberie-sanitaire">Plomberie </a>
+      </li>
+      <li class={option02}>
+        <a href="/debouchage-canalisation">Débouchage</a>
+      </li>
+      <li>
+        <a href="/contact">Contactez-nous</a>
+      </li>
+    </ul>
+  </div>
+  <!-- --- Category ---  -->
+
+  <!-- --- support ----- -->
+
+  <div class="sidebar__single sidebar__support">
+    <div class="sidebar__support-bg" style={`background-image: url();`}></div>
+    <h3 class="sidebar__suppot-title">Une question ? Un besoin?</h3>
+    <div class="mt-10">
+      <a href="tel:0474 56 56 56" class="thm-btn" data-text="0474 56 56 56">
+        0474 56 56 56</a
+      >
+    </div>
+  </div>
+
+  <!-- --- support ----- -->
+
+  {
+    selectedContent === "plomberie" ? (
+      <PlomberieTags />
+    ) : selectedContent === "debouchage" ? (
+      <DebouchageTags />
+    ) : null
+  }
+
+  {
+    selectedContent === "plomberie" ? (
+      <PlomberieCities />
+    ) : selectedContent === "debouchage" ? (
+      <DebouchageCities />
+    ) : null
+  }
+</aside>

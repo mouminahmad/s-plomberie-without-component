@@ -1,0 +1,50 @@
+---
+// Import the image in Astro
+import ctaBg from "../../assets/images/cta-v1-bg.jpg";
+---
+
+<section class="cta-one relative">
+  <!-- Background image with Astro import -->
+  <div
+    class="cta-one__bg absolute inset-0 z-0 bg-cover bg-center"
+    style={`background-image: url(${ctaBg.src});`}
+  >
+  </div>
+
+  <!-- Content inside container -->
+  <div class="container mx-auto relative z-10 py-16">
+    <div class="grid grid-cols-1">
+      <div class="cta-one__inner text-center">
+        <h2 class="text-2xl font-semibold text-white">
+          S-Plomberie est à votre Service pour Toute Intervention en urgence
+          24h/7j
+        </h2>
+
+        <ul class="cta-one__list my-4">
+          <li>
+            <p><strong>Plomberie</strong></p>
+          </li>
+          <li>
+            <p><strong>Débouchage</strong></p>
+          </li>
+        </ul>
+
+        <div class="cta-one__btn-box">
+          <div class="btn-box1">
+            <a href="tel:+32474565656" class="thm-btn" data-text="Nous appeler"
+              >0474 56 56 56
+            </a>
+          </div>
+          <div class="btn-box2">
+            <a
+              onclick="document.getElementById('devisModal').classList.remove('hidden')"
+              style="cursor: pointer"
+              class="thm-btn"
+              data-text="Demande de devis">Demande de divs</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

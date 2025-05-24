@@ -1,0 +1,38 @@
+---
+import img1 from "../../assets/images/services/travaux-plomberie-01.jpg";
+import img2 from "../../assets/images/services/travaux-debouchage-01.jpg";
+import ServiceCard from "./ServiceCard.astro";
+---
+
+<!--Section des services-->
+<section class="services-two-sec">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="sec-title text-center">
+      <div class="sec-title__tagline">
+        <span class="left"></span>
+        <div class="h6">S-Plomberie</div>
+        <span class="right"></span>
+      </div>
+      <h2 class="sec-title__title">
+        Entreprise depannage plomberie<br />
+        et de débouchage de canalisation
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap -mx-4">
+      <ServiceCard
+        img={img1}
+        link="plomberie-sanitaire"
+        title="Plomberie"
+        description="Un problème avec votre équipement sanitaire ? Rassurez-vous, nous enverrons à votre domicile un plombier qui prendra en charge le dépannage de votre équipement sanitaire ou sa rénovation."
+      />
+      <ServiceCard
+        img={img2}
+        link="debouchage-canalisation"
+        title="Débouchage canalisation"
+        description="Nos experts en débouchage urgent de canalisation maîtrisent les techniques les plus éprouvées pour venir à bout des bouchons. Sous votre demande, un plombier déboucheur viendra à votre domicile."
+      />
+    </div>
+  </div>
+  <!--Fin section des services-->
+</section>

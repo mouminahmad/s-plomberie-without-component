@@ -1,0 +1,125 @@
+---
+// Props
+const { url = "/" } = Astro.props;
+
+// Image Imports
+import footerBg from "../../assets/images/footer-bg-01.png";
+import footerImg3 from "../../assets/images/footer-v1-img3.png";
+import logoWhite from "../../assets/images/logo-white-sos-plomberie.png";
+import CallWidget from "./CallWidget.astro";
+---
+
+<CallWidget />
+<footer class="footer-one-sec">
+  <div
+    class="footer-one__pattern"
+    style={`background-image: url(${footerBg.src});`}
+  >
+  </div>
+  <div class="footer-one__top">
+    <div
+      class="footer-one__top-img"
+      style={`background-image:url(${footerImg3.src});`}
+    >
+    </div>
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <div class="footer-one__top-inner">
+            <div class="flex flex-wrap">
+              <!-- Colonne 01 -->
+              <div
+                class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2 wow animated fadeInUp"
+                data-wow-delay="0.1s"
+              >
+                <div class="footer-widget__column footer-widget__about">
+                  <div class="footer-widget__about-logo">
+                    <a href={url}>
+                      <img src={logoWhite.src} alt="Logo S-Plomberie" />
+                    </a>
+                  </div>
+                  <p class="footer-widget__about-text">
+                    S-Plomberie vous propose ses services de Plomberie
+                    Sanitaire, Débouchage de canalisations (WC Toilette, des
+                    Égout, Débouchage avec Haute Pression...
+                  </p>
+                </div>
+              </div>
+
+              <!-- Colonne 02 -->
+              <div
+                class="w-full xl:w-1/4 lg:w-1/2 md:w-1/2 wow animated fadeInUp"
+                data-wow-delay="0.3s"
+              >
+                <div class="footer-widget__column footer-widget__services">
+                  <h2 class="footer-widget__title">Liens</h2>
+                  <ul class="footer-widget__services-list">
+                    <li class="footer-widget__services-list-item">
+                      <a href={`${url}a-propos-s-plomberie`}>A propos</a>
+                    </li>
+                    <li class="footer-widget__services-list-item">
+                      <a href={`${url}plomberie-sanitaire`}>Plomberie</a>
+                    </li>
+                    <li class="footer-widget__services-list-item">
+                      <a href={`${url}debouchage-canalisation`}>Débouchage</a>
+                    </li>
+                    <li class="footer-widget__services-list-item">
+                      <a href={`${url}contact`}>Contact</a>
+                    </li>
+                    <li class="footer-widget__services-list-item">
+                      <a href={`${url}mentions-legales`}>Mentions légales</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Colonne 03 -->
+              <div
+                class="w-full xl:w-1/4 lg:w-1/2 md:w-1/2 wow animated fadeInUp"
+                data-wow-delay="0.7s"
+              >
+                <div class="footer-widget__column footer-widget__services">
+                  <h2 class="footer-widget__title">Nous contacter</h2>
+                  <ul class="footer-widget__services-list">
+                    <li>
+                      <span class="icon-pin"></span> Bruxelles et Wallonie
+                    </li>
+                    <li>
+                      <span class="icon-email"></span> contact@s-plomberie.be
+                    </li>
+                    <li><span class="icon-phone-call"></span> 0474 56 56 56</li>
+                  </ul>
+                </div>
+                <div class="footer-widget__about-social-link">
+                  <ul class="flex space-x-4">
+                    <li>
+                      <a
+                        href="https://www.facebook.com/SPlomberieBruxellesWallonie/"
+                        target="_blank"
+                      >
+                        <i class="fab fa-facebook pt-2"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/s_plomberie" target="_blank">
+                        <i class="fab fa-twitter pt-2"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/splomberiebruxelleswallonie/"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram pt-2"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

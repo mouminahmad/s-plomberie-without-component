@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import PageHeader from '../components/header/PageHeader.astro';
+import ContactMap from '../components/contact-map/ContactMap.astro';
+import ContactPage from '../components/contact-page/ContactPage.astro';
+---
+
+<Layout
+  title="Plombier déboucheur en urgence contactez-nous : S-Plomberie"
+  description="Contactez S-Plomberie, une expérience de plus de 7 ans en installation, réparation d'équipement plomberie sanitaire et débouchage des canalisations."
+>
+  <!-- Header with the 5th menu item highlighted -->
+  <Header/>
+
+  <!-- Page header with the contact page title -->
+  <PageHeader title1="Contactez-nous S-Plomberie" />
+
+  <!-- Map section showing contact location -->
+  <ContactMap />
+
+  <!-- Contact form and details section -->
+  <ContactPage />
+</Layout>

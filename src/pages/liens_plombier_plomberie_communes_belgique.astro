@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import PageHeader from '../components/header/PageHeader.astro';
+
+// Import SEO-friendly place names to dynamically generate links
+import { seoPlaces } from '../data/seo_places';
+---
+
+<Layout
+  title="Débouchage canalisation en proximité et/ou en urgence, S-Plomberie"
+  description="S-Plomberie specializes in emergency plumbing services in Belgium. Whether maintenance or repair, we provide sanitary plumbing and drain unclogging services."
+>
+  <!-- Header component -->
+  <Header />
+
+  <!-- Page title header -->
+  <PageHeader title1="Débouchage canalisation En proximité et en urgence" />
+
+  <!-- Main container -->
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-wrap p-3">
+
+      <!-- List of unclogging services by location -->
+      <div class="w-full xl:w-1/2 service my-12">
+        <ul>
+          {
+            // Map over seoPlaces object to create links dynamically
+            Object.entries(seoPlaces).map(([slug, name]) => (
+              <li>
+                <a href={`/entreprise-de-debouchage/debouchage/${slug}`}>
+                  Débouchage {name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,31 @@
+---
+import { seo_places2 } from "../../../data/seo_places"; // Path adjust karen agar zarurat ho
+const url = "/";
+---
+
+<div class="sidebar__single sidebar__tags">
+  <ul class="sidebar__tags-list">
+    {
+      Object.entries(seo_places2).map(([slug, value]) => (
+        <li>
+          <a
+            href={`${url}${slug === "bruxelles" ? "entreprise-de-debouchage/debouchage/" : "prestation-debouchage/debouchage/"}${slug}`}
+            class="hover:underline"
+          >
+            {value}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a href={`${url}liens_debouchage_villes_bruxelles`}
+        >Services Débouchage pour les autres communes Bruxelles</a
+      >
+    </li>
+    <li>
+      <a href={`${url}liens_debouchage_communes_belgique`}
+        >Service Débouchages pour les autres communes Belgique</a
+      >
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import Cta from '../components/cta/Cta.astro';
+import PageHeader from '../components/header/PageHeader.astro';
+import PourquoiNousChoisir from '../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro';
+import ServiceDetails from '../components/service-details/ServiceDetails.astro';
+---
+
+<Layout
+  title="Plombier professionnel | S-Plomberie - Service de plomberie rapide et fiable"
+  description="S-Plomberie offre des services de plomberie rapides et fiables pour les particuliers et les entreprises. Contactez nos plombiers professionnels pour des solutions sur mesure respectueuses de l'environnement. Disponible 24/7."
+>
+  <!-- Header component with 'current03' set to 'current' to highlight menu -->
+  <Header current03="current" />
+
+  <!-- Page header with main title -->
+  <PageHeader title1="Plombier professionnel à votre service | S-Plomberie" title2="" />
+
+  <!-- Detailed section for plumbing services -->
+  <ServiceDetails selectedContent="plomberie" />
+
+  <!-- Section explaining why to choose us -->
+  <PourquoiNousChoisir />
+
+  <!-- Call to action component -->
+  <Cta />
+</Layout>

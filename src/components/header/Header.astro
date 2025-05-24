@@ -1,0 +1,141 @@
+---
+import logo from "../../assets/images/logo-s-plomberie.png";
+import Whitelogo from "../../assets/images/logo-white-s-plomberie.png";
+import SideBar from "./SideBar.astro";
+import ModelForm from "../form/ModelForm.astro";
+
+// Get current path
+const { url } = Astro.request;
+const { pathname } = new URL(url);
+
+// Utility function
+const isCurrent = (path: string) =>
+  pathname === path || pathname.startsWith(path + '/');
+
+const current01 = isCurrent('/') ? 'current' : '';
+const current02 = isCurrent('/a-propos-s-plomberie') ? 'current' : '';
+const current03 = isCurrent('/plomberie-sanitaire') ? 'current' : '';
+const current04 = isCurrent('/debouchage-canalisation') ? 'current' : '';
+const current05 = isCurrent('/contact') ? 'current' : '';
+---
+
+<header class="main-header main-header-three clearfix">
+  <div class="main-header-three__wrapper">
+    <div class="main-header-three__middle">
+      <div class="container mx-auto px-4">
+        <div class="main-header-three__middle-inner">
+          <div class="logo-box">
+            <a href="/">
+              <img src={logo.src} alt="Logo de S-Plomberie" width="190" height="65" />
+            </a>
+          </div>
+
+          <div class="contact-info !hidden xl:!block">
+            <ul>
+              <li>
+                <div class="icon-box"><span class="icon-pin"></span></div>
+                <div class="text-box">
+                  <div><strong>Adresse</strong></div>
+                  <p>Bruxelles et Wallonie</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><span class="icon-email"></span></div>
+                <div class="text-box">
+                  <div><strong>Envoyer message</strong></div>
+                  <p class="email">
+                    <a href="mailto:contact@s-plomberie.be">contact@s-plomberie.be</a>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><span class="icon-phone-call"></span></div>
+                <div class="text-box">
+                  <div><strong>Nous appeler</strong></div>
+                  <p class="number"><a href="tel:0474565656">0474 56 56 56</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-header-three__bottom">
+      <div class="container mx-auto px-4">
+        <div class="main-header-three__bottom-inner">
+          <div class="main-header-one__bottom-left">
+            <nav class="main-menu main-menu--1">
+              <div class="main-menu__inner">
+                <a href="#" class="mobile-nav__toggler">
+                  <i class="fa fa-bars"></i>
+                </a>
+                <div class="stricky-one-logo">
+                  <div class="logo">
+                    <a href="/">
+                      <img src={logo.src} width="190" height="65" alt="S-plomberie" />
+                    </a>
+                  </div>
+                </div>
+                <ul class="main-menu__list">
+                  <li class={current01}><a href="/">Accueil</a></li>
+                  <li class={current02}><a href="/a-propos-s-plomberie">À propos</a></li>
+                  <li class={current03}><a href="/plomberie-sanitaire">Plomberie</a></li>
+                  <li class={current04}><a href="/debouchage-canalisation">Débouchage</a></li>
+                  <li>
+                    <a onclick="document.getElementById('devisModal').classList.remove('hidden')" class="cursor-pointer text-blue-600 underline">
+                      Demande de devis
+                    </a>
+                  </li>
+                  <li class={current05}><a href="/contact">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="main-header-one__bottom-right">
+            <div class="side-content-button-box">
+              <div class="side-content-button">
+                <a class="navSidebar-button" href="#">
+                  <span class="decor"></span>
+                  <span class="decor"></span>
+                  <span class="decor"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+    <div class="logo-box">
+      <a href="/" aria-label="logo image">
+        <img src={Whitelogo.src} width="190" height="65" alt="S-plomberie" />
+      </a>
+    </div>
+    <div class="mobile-nav__container"></div>
+    <ul class="mobile-nav__contact">
+      <li><i class="fa fa-envelope"></i><a href="mailto:contact@s-plomberie.be">contact@s-plomberie.be</a></li>
+      <li><i class="fa fa-phone"></i><a href="tel:0474565656">0474 56 56 56</a></li>
+    </ul>
+    <div class="mobile-nav__top">
+      <div class="mobile-nav__social">
+        <a href="https://twitter.com/s_plomberie" class="fab fa-twitter" target="_blank"></a>
+        <a href="https://www.facebook.com/SPlomberieBruxellesWallonie/" class="fab fa-square-facebook" target="_blank"></a>
+        <a href="https://www.instagram.com/splomberiebruxelleswallonie/" class="fab fa-instagram" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<SideBar />
+<ModelForm />
+
+<div class="stricky-header stricked-menu main-menu">
+  <div class="sticky-header__content"></div>
+</div>

@@ -1,0 +1,22 @@
+---
+import AppointmentForm from "../form/AppointmentForm.astro";
+import img from "../../assets/images/backgrounds/contact-01-bg.jpg";
+---
+
+<section
+  class="appointment-one-sec relative min-h-screen bg-cover bg-center flex items-center"
+  style={`background-image: url(${img.src});`}
+>
+  <!-- Background dark overlay (optional for better readability) -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="relative z-10 w-full max-w-screen-xl mx-auto px-4">
+    <div class="relative z-10 w-full max-w-screen-xl mx-auto mt-[-227px]">
+      <!-- ✅ Left side: Your form stays in component -->
+      <AppointmentForm />
+
+      <!-- Optional Right side empty or for image/text -->
+      <div class="hidden xl:block xl:w-7/12 px-4"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import Cta from '../components/cta/Cta.astro';
+import PageHeader from '../components/header/PageHeader.astro';
+import PourquoiNousChoisir from '../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro';
+import ServiceDetails from '../components/service-details/ServiceDetails.astro';
+---
+
+<Layout
+  title="Service de débouchage de canalisations par des plombiers professionnels"
+  description="Besoin d'un service de débouchage de qualité pour vos canalisations? S-Plomberie est là pour vous aider. Nos plombiers professionnels vous offrent des solutions de débouchage rapides et efficaces pour tous types de canalisations. Contactez-nous dès maintenant pour en savoir plus."
+>
+  <!-- Header with current menu item highlighted -->
+  <Header/>
+
+  <!-- Page header showing main title -->
+  <PageHeader title1="Service de débouchage de canalisations" title2="" />
+
+  <!-- Section displaying details about plumbing services -->
+  <ServiceDetails selectedContent="plomberie" />
+
+  <!-- Section explaining reasons to choose us -->
+  <PourquoiNousChoisir />
+
+  <!-- Call to action section -->
+  <Cta />
+</Layout>

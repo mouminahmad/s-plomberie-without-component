@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header/Header.astro";
+import PageHeader from "../../components/header/PageHeader.astro";
+import { seoPlaces } from "../../data/seoPlomberieNVKey";
+---
+
+<Layout
+  title="Plomberie sanitaire en proximité et/ou en urgence, S-Plomberie"
+  description="S-Plomberie est spécialisée dans le dépannage d'urgence en Belgique. Qu'il s'agisse d'un entretien ou d'une réparation, nous mettons à votre disposition nos services de plomberie sanitaire et de débouchage de canalisation"
+>
+  <Header />
+  <PageHeader title1="Plomberie sanitaire En proximité et en urgence" />
+
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-wrap p-3">
+      <div class="w-full xl:w-1/2 service my-12">
+        <ul>
+          {
+            Object.entries(seoPlaces).map(([slug, name]) => (
+              <li>
+                <a
+                  class="hover:!text-[#4683c4]"
+                  href={`/prestation-plomberie/plomberie/${slug}`}
+                >
+                  Plomberie {name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

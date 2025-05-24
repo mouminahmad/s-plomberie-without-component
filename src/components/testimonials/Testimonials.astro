@@ -1,0 +1,58 @@
+---
+import TestimonialCard from "./TestimonialCard.astro";
+
+const testimonials = [
+  { name: "Gerald Robertson", rating: 5 },
+  { name: "Herbert Wilson", rating: 5 },
+  { name: "Marie Curie", rating: 5 },
+  { name: "Luc Dupont", rating: 5 },
+];
+---
+
+<section class="testimonials-three">
+  <div class="container mx-auto px-4">
+    <div class="sec-title">
+      <div class="sec-title__tagline">
+        <div class="h6">s-plomberie</div>
+        <span class="right"></span>
+      </div>
+      <h2 class="sec-title__title">Avis de nos clients</h2>
+    </div>
+
+    <swiper-container
+      slides-per-view="1"
+      space-between="20"
+      loop="true"
+      autoplay-delay="5000"
+      breakpoints='{"768": {"slidesPerView": 2}}'
+    >
+      {
+        testimonials.map((testimonial) => (
+          <TestimonialCard
+            name={testimonial.name}
+            rating={testimonial.rating}
+          />
+        ))
+      }
+    </swiper-container>
+
+    <div class="btn-box2 text-center mt-6 flex flex-wrap justify-center gap-3">
+      <a
+        href="https://urlzs.com/j4MWe"
+        target="_blank"
+        class="thm-btn"
+        data-text="Plus d'avis"
+      >
+        Plus d'avis
+      </a>
+      <a
+        href="https://g.page/r/CVQouuHK7GlGEB0/review"
+        target="_blank"
+        class="thm-btn"
+        data-text="Votre avis nous intéresse"
+      >
+        Votre avis nous intéresse
+      </a>
+    </div>
+  </div>
+</section>

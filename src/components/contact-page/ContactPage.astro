@@ -1,0 +1,65 @@
+---
+import ContactForm from "../form/form.astro";
+---
+
+<section class="contact-page">
+  <div class="max-w-screen-xl mx-auto px-4">
+    <div class="flex flex-wrap -mx-4">
+      <!--Start Contact Page Content-->
+      <div class="w-full md:w-5/12 px-4">
+        <div class="contact-page__content">
+          <div class="title">
+            <h2>Nous contacter</h2>
+          </div>
+
+          <div class="contact-page__content-single">
+            <div class="contact-page__content-single-inner">
+              <div class="icon-box">
+                <span class="icon-pin"></span>
+              </div>
+              <div class="content-box">
+                <h2>Adresse</h2>
+                <p>Bruxelles et Wallonie</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-page__content-single">
+            <div class="contact-page__content-single-inner">
+              <div class="icon-box">
+                <span class="icon-phone-call-1"></span>
+              </div>
+              <div class="content-box">
+                <h2>Téléphone</h2>
+                <p class="number1">
+                  <a href="tel:0474 56 56 56">0474 56 56 56</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-page__content-single">
+            <div class="contact-page__content-single-inner">
+              <div class="icon-box">
+                <span class="icon-email"></span>
+              </div>
+              <div class="content-box">
+                <h2>Email</h2>
+                <p class="email1">
+                  <a href="mailto:contact@s-plomberie.be"
+                    >contact@s-plomberie.be</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Contact Page Content-->
+
+      <!--Start Contact Page Form-->
+      <ContactForm />
+      <!--End Contact Page Form-->
+    </div>
+  </div>
+</section>
