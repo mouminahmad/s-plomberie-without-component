@@ -1,6 +1,4 @@
 ---
-import TestimonialCard from "./TestimonialCard.astro";
-
 const testimonials = [
   { name: "Gerald Robertson", rating: 5 },
   { name: "Herbert Wilson", rating: 5 },
@@ -27,11 +25,23 @@ const testimonials = [
       breakpoints='{"768": {"slidesPerView": 2}}'
     >
       {
-        testimonials.map((testimonial) => (
-          <TestimonialCard
-            name={testimonial.name}
-            rating={testimonial.rating}
-          />
+        testimonials.map(({ name, rating }) => (
+          <swiper-slide>
+            <div class="testimonials-three__single">
+              <div class="testimonials-three__single-inner">
+                <div class="title-box">
+                  <h3>{name}</h3>
+                </div>
+                <ul class="rating-box flex gap-1">
+                  {
+                    Array.from({ length: rating }).map(() => (
+                      <li><span class="icon-star" /></li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </swiper-slide>
         ))
       }
     </swiper-container>

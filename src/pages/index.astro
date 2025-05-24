@@ -1,19 +1,23 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import Header from '../components/header/Header.astro';
-import Hero from '../components/hero/Hero.astro';
-import AboutSection1 from '../components/about-section/AboutSection1.astro';
-import Services from '../components/services/Services.astro';
-import AppointmentSection from '../components/appointment-section/AppointmentSection.astro';
-import PourquoiNousChoisir from '../components/pourquoi-nous-choisir/PourquoiNousChoisir.astro';
-import Testimonials from '../components/testimonials/Testimonials.astro';
-import Cta from '../components/cta/Cta.astro';
+import Header from "../components/header/Header.astro";
 
-import slider01 from '../assets/images/slider/slider-01.jpg';
-import slider02 from '../assets/images/slider/slider-02.jpg';
-import slider03 from '../assets/images/slider/slider-03.jpg';
-import imgUrl from '../assets/images/apropos-sos-plomberie-debouchage.jpg';
+import slider01 from "../assets/images/slider/slider-01.jpg";
+import slider02 from "../assets/images/slider/slider-02.jpg";
+import slider03 from "../assets/images/slider/slider-03.jpg";
+import aboutUsImage from "../assets/images/apropos-sos-plomberie-debouchage.jpg";
+import ctaBg from "../assets/images/cta-v1-bg.jpg";
+import img1 from "../assets/images/ressources/pourquoi-nous-choisir-01.jpg";
+import img2 from "../assets/images/ressources/pourquoi-nous-choisir-02.jpg";
+import img3 from "../assets/images/ressources/pourquoi-nous-choisir-03.jpg";
+import img4 from "../assets/images/ressources/pourquoi-nous-choisir-04.jpg";
+import contactImg from "../assets/images/backgrounds/contact-01-bg.jpg";
+
+import plumbingService from "../assets/images/services/travaux-plomberie-01.jpg";
+import drainUnblockingService from "../assets/images/services/travaux-debouchage-01.jpg";
+
+// slider
 
 const slides = [
   {
@@ -46,30 +50,521 @@ const slides = [
     containerClasses: "mx-auto px-4",
   },
 ];
+
+// slider
+
+// Services section
+const services = [
+  {
+    img: plumbingService,
+    link: "plomberie-sanitaire",
+    title: "Plomberie",
+    description:
+      "Un problème avec votre équipement sanitaire ? Rassurez-vous, nous enverrons à votre domicile un plombier qui prendra en charge le dépannage de votre équipement sanitaire ou sa rénovation.",
+  },
+  {
+    img: drainUnblockingService,
+    link: "debouchage-canalisation",
+    title: "Débouchage canalisation",
+    description:
+      "Nos experts en débouchage urgent de canalisation maîtrisent les techniques les plus éprouvées pour venir à bout des bouchons. Sous votre demande, un plombier déboucheur viendra à votre domicile.",
+  },
+];
+
+// Services section
+
+// Testimonials
+
+const testimonials = [
+  { name: "Gerald Robertson", rating: 5 },
+  { name: "Herbert Wilson", rating: 5 },
+  { name: "Marie Curie", rating: 5 },
+  { name: "Luc Dupont", rating: 5 },
+];
+
+// Testimonials
 ---
 
-<Layout title="Débouchage canalisation dépannage plomberie - 0474 56 56 56" description="Pour vos problèmes de plomberie sanitaire et de débouchage de canalisations, S-Plomberie et ses équipes est votre partenaire privilégié en Belgique ">
-  <!-- Header navigation -->
-  <Header />
-
+<Layout
+  title="Débouchage canalisation dépannage plomberie - 0474 56 56 56"
+  description="Pour vos problèmes de plomberie sanitaire et de débouchage de canalisations, S-Plomberie et ses équipes est votre partenaire privilégié en Belgique "
+>
+ 
   <!-- Hero slider -->
-  <Hero slides={slides} />
+
+  <section class="slider-one-sec style3">
+    <div class="slider-carousel owl-carousel owl-theme">
+      {
+        slides.map((slide) => (
+          <div class="slider-one__single">
+            <div
+              class="image-layer"
+              style={`background-image: url(${slide.image});`}
+            />
+            <div class={`container ${slide.containerClasses || ""}`}>
+              <div class="flex flex-wrap">
+                <div class="w-full">
+                  <div
+                    class={`slider-one__single-content ${slide.contentClasses || ""}`}
+                  >
+                    <h2 set:html={slide.heading} />
+                    <div class="btn-box">
+                      <a
+                        href={slide.link}
+                        class="thm-btn"
+                        data-text={slide.btnText}
+                      >
+                        {slide.btnText}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <!-- Hero slider -->
 
   <!-- About section with image -->
-  <AboutSection1 imageUrl={imgUrl.src} />
+
+  <section class="about-three">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- container -->
+      <div class="flex flex-wrap -mx-4">
+        <!-- row -->
+        <div class="w-full xl:w-1/2 px-4 mb-8 xl:mb-0">
+          <!-- col-xl-6 -->
+          <div class="about-three__img">
+            <div class="inner">
+              <img
+                src={aboutUsImage.src}
+                alt="s-plomberie.be, Expert en plomberie et en débouchages-"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="w-full xl:w-1/2 px-4">
+          <!-- col-xl-6 -->
+          <div class="about-three__content">
+            <div class="sec-title">
+              <div class="sec-title__tagline">
+                <div class="h6">À propos</div>
+                <span class="right"></span>
+              </div>
+              <h1 class="sec-title__title">
+                le spécialiste en débouchage canalisation et plomberie en
+                Belgique
+              </h1>
+            </div>
+            <div class="about-three__content-inner">
+              <div class="text1">
+                <p>
+                  <strong>S-Plomberie</strong> est votre partenaire privilégié en
+                  <strong>Belgique</strong> pour vos problèmes de <a
+                    href="plomberie-sanitaire"
+                    ><strong>plomberie sanitaire</strong></a
+                  > et de <a href="debouchage-canalisation"
+                    ><strong>débouchage de canalisations</strong></a
+                  >. Vous satisfaire en ce qui concerne l'installation, la
+                  réparation de <strong>plomberie</strong> et le <strong
+                    >débouchage de canalisation</strong
+                  > est notre plus grande satisfaction. Pour ce faire, nous mettons
+                  à votre entière disposition sur tout le territoire belge nos équipes
+                  de <strong>plombiers</strong>.
+                </p>
+              </div>
+              <div class="text2">
+                <div class="h4">
+                  Plus de 7 ans en installation, réparation d'équipement
+                  sanitaire et <strong>débouchage de canalisation</strong>.
+                </div>
+              </div>
+              <ul class="about-three__content-list">
+                <li>
+                  <div class="icon-box"><span class="icon-tick"></span></div>
+                  <div class="text-box">
+                    <p>Service Express pas cher 24H/24 et 7j/7</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon-box"><span class="icon-tick"></span></div>
+                  <div class="text-box">
+                    <p>Intevention en urgence à votre domicile</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon-box"><span class="icon-tick"></span></div>
+                  <div class="text-box">
+                    <p>
+                      Pour toute urgence : <a href="tel:0474565656"
+                        >0474 56 56 56</a
+                      >
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <div class="about-three__content-btn">
+                <a
+                  href="a-propos-s-plomberie"
+                  class="thm-btn"
+                  data-text="En savoir plus">En savoir plus</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About section with image -->
 
   <!-- Services section -->
-  <Services />
+
+  <!-- Section des services -->
+  <section class="services-two-sec">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="sec-title text-center">
+        <div class="sec-title__tagline">
+          <span class="left"></span>
+          <div class="h6">S-Plomberie</div>
+          <span class="right"></span>
+        </div>
+        <h2 class="sec-title__title">
+          Entreprise depannage plomberie<br />
+          et de débouchage de canalisation
+        </h2>
+      </div>
+
+      <div class="flex flex-wrap -mx-4">
+        {
+          services.map((service) => (
+            <div class="w-full lg:w-1/2 px-4 mb-8">
+              <div class="services-two__single">
+                <div class="services-two__single-img">
+                  <div class="inner">
+                    <img
+                      src={service.img.src}
+                      alt={`s-plomberie - ${service.title}`}
+                    />
+                  </div>
+                  <div class="icon-box">
+                    <a href={service.link}>
+                      <span class="icon-right-arrow" />
+                    </a>
+                  </div>
+                </div>
+                <div class="services-two__single-content">
+                  <h2>
+                    <a href={service.link}>{service.title}</a>
+                  </h2>
+                  <p>{service.description}</p>
+                  <div class="btn-box">
+                    <a href={service.link}>
+                      En savoir plus <span class="icon-plus-sign" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
 
   <!-- Appointment booking -->
-  <AppointmentSection />
+
+  <section
+    class="appointment-one-sec relative min-h-screen bg-cover bg-center flex items-center"
+    style={`background-image: url(${contactImg.src});`}
+  >
+    <!-- Background dark overlay (optional for better readability) -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 w-full max-w-screen-xl mx-auto px-4">
+      <div
+        class="relative z-10 w-full max-w-screen-xl mx-auto mt-[-227px] flex flex-wrap"
+      >
+        <!-- ✅ Left side: Form content -->
+        <div class="w-full xl:w-5/12">
+          <div class="appointment-one__form">
+            <div class="title-box mb-6">
+              <h2 class="text-2xl font-semibold">Nous envoyez un message</h2>
+            </div>
+
+            <div class="form-box">
+              <form method="post" class="space-y-4">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="nom"
+                    id="nom02"
+                    placeholder="Votre nom"
+                    required
+                    class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="tel"
+                    id="tel02"
+                    placeholder="N° téléphone"
+                    required
+                    class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    placeholder="Message"
+                    id="message02"
+                    class="w-full h-32 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  ></textarea>
+                </div>
+
+                <div class="flex flex-wrap -mx-4">
+                  <div class="w-full px-4">
+                    <div id="success02"></div>
+                    <div class="button-box mt-4">
+                      <button
+                        class="thm-btn"
+                        data-text="Envoyer"
+                        type="button"
+                        onclick="envoyerFormIndex()"
+                      >
+                        Envoyer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Right side empty or for image/text -->
+        <div class="hidden xl:block xl:w-7/12 px-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment booking -->
 
   <!-- Why choose us -->
-  <PourquoiNousChoisir />
+  <section class="why-choose-one-sec" style="background-color: #f2f3f5;">
+    <div class="container mx-auto px-4">
+      <!-- Bootstrap 'container' replaced -->
+      <div class="flex flex-wrap">
+        <!-- Bootstrap 'row' replaced -->
+        <div class="w-full xl:w-1/2">
+          <!-- Bootstrap 'col-xl-6' replaced -->
+          <div class="why-choose-one__content">
+            <div class="sec-title">
+              <div class="sec-title__tagline">
+                <div class="h6">Pourquoi nous chosir</div>
+                <span class="right"></span>
+              </div>
+              <h2 class="sec-title__title">
+                Service de plomberie et de débouchage canalisation
+              </h2>
+              <p
+                class="sec-title__text"
+                style="line-height: 30px; text-align: justify"
+              >
+                Chez <strong>S-Plomberie</strong>, nous bénéficions d'une
+                expérience de plus de <strong>7 ans</strong> en installation, réparation
+                d'équipement sanitaire et débouchage de canalisation. Nous maîtrisons
+                de ce fait parfaitement les différents problèmes qui peuvent survenir
+                dans une installation sanitaire et les solutions adéquates. À votre
+                demande, un plombier expérimenté de notre équipe se rendra à votre
+                domicile. Il s'assurera alors, selon le cas, du dépannage de votre
+                installation sanitaire ou du débouchage de votre canalisation. N'hésitez
+                donc pas à solliciter nos services de plomberie sanitaire et de débouchage
+                des canalisations en Belgique.
+              </p>
+              <div class="h4 mt-3">Une question en plomberie? Un besoin ?</div>
+              <div class="h4 mt-2">
+                Appelez-nous <a href="tel:0474 56 56 56">0474 56 56 56</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full xl:w-1/2">
+          <!-- Bootstrap 'col-xl-6' replaced -->
+          <div class="why-choose-one__img">
+            <div class="flex flex-wrap">
+              <!-- Bootstrap 'row' replaced -->
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <!-- col-xl-6 col-lg-6 col-md-6 -->
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img
+                      src={img1.src}
+                      alt="Service de plomberie et de débouchage canalisation en belgique"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img src={img2.src} alt="Plomberie sanitaire en belgique" />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img
+                      src={img3.src}
+                      alt="Entreprise de débouchage canalisation en blegique"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="w-full xl:w-1/2 lg:w-1/2 md:w-1/2">
+                <div class="why-choose-one__img-single">
+                  <div class="img-box">
+                    <img
+                      src={img4.src}
+                      alt="Plomberie sanitaire En proximité et en urgence en belgique"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
 
   <!-- Testimonials -->
-  <Testimonials />
+
+  <section class="testimonials-three">
+    <div class="container mx-auto px-4">
+      <div class="sec-title">
+        <div class="sec-title__tagline">
+          <div class="h6">s-plomberie</div>
+          <span class="right"></span>
+        </div>
+        <h2 class="sec-title__title">Avis de nos clients</h2>
+      </div>
+
+      <swiper-container
+        slides-per-view="1"
+        space-between="20"
+        loop="true"
+        autoplay-delay="5000"
+        breakpoints='{"768": {"slidesPerView": 2}}'
+      >
+        {
+          testimonials.map(({ name, rating }) => (
+            <swiper-slide>
+              <div class="testimonials-three__single">
+                <div class="testimonials-three__single-inner">
+                  <div class="title-box">
+                    <h3>{name}</h3>
+                  </div>
+                  <ul class="rating-box flex gap-1">
+                    {Array.from({ length: rating }).map(() => (
+                      <li>
+                        <span class="icon-star" />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </swiper-slide>
+          ))
+        }
+      </swiper-container>
+
+      <div
+        class="btn-box2 text-center mt-6 flex flex-wrap justify-center gap-3"
+      >
+        <a
+          href="https://urlzs.com/j4MWe"
+          target="_blank"
+          class="thm-btn"
+          data-text="Plus d'avis"
+        >
+          Plus d'avis
+        </a>
+        <a
+          href="https://g.page/r/CVQouuHK7GlGEB0/review"
+          target="_blank"
+          class="thm-btn"
+          data-text="Votre avis nous intéresse"
+        >
+          Votre avis nous intéresse
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
 
   <!-- Call to action -->
-  <Cta />
+
+  <section class="cta-one relative">
+    <!-- Background image with Astro import -->
+    <div
+      class="cta-one__bg absolute inset-0 z-0 bg-cover bg-center"
+      style={`background-image: url(${ctaBg.src});`}
+    >
+    </div>
+
+    <!-- Content inside container -->
+    <div class="container mx-auto relative z-10 py-16">
+      <div class="grid grid-cols-1">
+        <div class="cta-one__inner text-center">
+          <h2 class="text-2xl font-semibold text-white">
+            S-Plomberie est à votre Service pour Toute Intervention en urgence
+            24h/7j
+          </h2>
+
+          <ul class="cta-one__list my-4">
+            <li>
+              <p><strong>Plomberie</strong></p>
+            </li>
+            <li>
+              <p><strong>Débouchage</strong></p>
+            </li>
+          </ul>
+
+          <div class="cta-one__btn-box">
+            <div class="btn-box1">
+              <a
+                href="tel:+32474565656"
+                class="thm-btn"
+                data-text="Nous appeler"
+                >0474 56 56 56
+              </a>
+            </div>
+            <div class="btn-box2">
+              <a
+                onclick="document.getElementById('devisModal').classList.remove('hidden')"
+                style="cursor: pointer"
+                class="thm-btn"
+                data-text="Demande de devis">Demande de divs</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to action -->
 </Layout>

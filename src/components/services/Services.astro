@@ -1,10 +1,26 @@
 ---
-import img1 from "../../assets/images/services/travaux-plomberie-01.jpg";
-import img2 from "../../assets/images/services/travaux-debouchage-01.jpg";
-import ServiceCard from "./ServiceCard.astro";
+import plumbingService from "../../assets/images/services/travaux-plomberie-01.jpg";
+import drainUnblockingService from "../../assets/images/services/travaux-debouchage-01.jpg";
+
+const services = [
+  {
+    img: plumbingService,
+    link: "plomberie-sanitaire",
+    title: "Plomberie",
+    description:
+      "Un problème avec votre équipement sanitaire ? Rassurez-vous, nous enverrons à votre domicile un plombier qui prendra en charge le dépannage de votre équipement sanitaire ou sa rénovation.",
+  },
+  {
+    img: drainUnblockingService,
+    link: "debouchage-canalisation",
+    title: "Débouchage canalisation",
+    description:
+      "Nos experts en débouchage urgent de canalisation maîtrisent les techniques les plus éprouvées pour venir à bout des bouchons. Sous votre demande, un plombier déboucheur viendra à votre domicile.",
+  },
+];
 ---
 
-<!--Section des services-->
+<!-- Section des services -->
 <section class="services-two-sec">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="sec-title text-center">
@@ -20,19 +36,32 @@ import ServiceCard from "./ServiceCard.astro";
     </div>
 
     <div class="flex flex-wrap -mx-4">
-      <ServiceCard
-        img={img1}
-        link="plomberie-sanitaire"
-        title="Plomberie"
-        description="Un problème avec votre équipement sanitaire ? Rassurez-vous, nous enverrons à votre domicile un plombier qui prendra en charge le dépannage de votre équipement sanitaire ou sa rénovation."
-      />
-      <ServiceCard
-        img={img2}
-        link="debouchage-canalisation"
-        title="Débouchage canalisation"
-        description="Nos experts en débouchage urgent de canalisation maîtrisent les techniques les plus éprouvées pour venir à bout des bouchons. Sous votre demande, un plombier déboucheur viendra à votre domicile."
-      />
+      {services.map(service => (
+        <div class="w-full lg:w-1/2 px-4 mb-8">
+          <div class="services-two__single">
+            <div class="services-two__single-img">
+              <div class="inner">
+                <img
+                  src={service.img.src}
+                  alt={`s-plomberie - ${service.title}`}
+                />
+              </div>
+              <div class="icon-box">
+                <a href={service.link}><span class="icon-right-arrow"></span></a>
+              </div>
+            </div>
+            <div class="services-two__single-content">
+              <h2><a href={service.link}>{service.title}</a></h2>
+              <p>{service.description}</p>
+              <div class="btn-box">
+                <a href={service.link}>
+                  En savoir plus <span class="icon-plus-sign"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
-  <!--Fin section des services-->
 </section>
