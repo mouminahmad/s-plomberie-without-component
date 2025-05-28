@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 
 import { seo_keys } from "../../data/seoDebouchageBruxelleKey";
-import DebouchageTags from "../../components/service-details/tags/DebouchageTags.astro";
 
 import imgBanner from "../../assets/images/services/s-plomberie-01.jpg";
 import ctaBg from "../../assets/images/cta-v1-bg.jpg";
@@ -10,7 +9,11 @@ import img1 from "../../assets/images/ressources/pourquoi-nous-choisir-01.jpg";
 import img2 from "../../assets/images/ressources/pourquoi-nous-choisir-02.jpg";
 import img3 from "../../assets/images/ressources/pourquoi-nous-choisir-03.jpg";
 import img4 from "../../assets/images/ressources/pourquoi-nous-choisir-04.jpg";
-import DebouchageCities from "../../components/service-details/cities/DebouchageCities.astro";
+
+import { seo_places2 } from "../../data/seo_places";
+import { seoKeys } from "../../data/seo/debouchage";
+
+const url = "/";
 
 // Static paths generation for dynamic routes
 export const getStaticPaths = () => {
@@ -192,8 +195,68 @@ const header = {
                 </div>
               </div>
 
-              <DebouchageTags />
-              <DebouchageCities />
+               <!-- Tags -->
+
+              <div class="sidebar__single sidebar__tags">
+                <ul class="sidebar__tags-list">
+                  {
+                    Object.entries(seoKeys).map(([slug, label]) => (
+                      <li>
+                        <a
+                          href={`/service-debouchage/${slug}`}
+                          class="hover:underline"
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  <li>
+                    <a href="/liens_SL_Debouchage" class="hover:underline"
+                      >Les autres services Débouchage</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- Tags -->
+
+              
+              <!-- Cities -->
+
+              <div class="sidebar__single sidebar__tags">
+                <ul class="sidebar__tags-list">
+                  {
+                    Object.entries(seo_places2).map(([slug, value]) => (
+                      <li>
+                        <a
+                          href={`${url}${slug === "bruxelles" ? "entreprise-de-debouchage/debouchage/" : "prestation-debouchage/debouchage/"}${slug}`}
+                          class="hover:underline"
+                        >
+                          {value}
+                        </a>
+                      </li>
+                    ))
+                  }
+                  <li>
+                    <a href={`${url}liens_debouchage_villes_bruxelles`}
+                      >Services Débouchage pour les autres communes Bruxelles</a
+                    >
+                  </li>
+                  <li>
+                    <a href={`${url}liens_debouchage_communes_belgique`}
+                      >Service Débouchages pour les autres communes Belgique</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+
+
+
+
+
+
+
             </aside>
           </div>
         </div>

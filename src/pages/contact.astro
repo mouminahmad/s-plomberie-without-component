@@ -120,11 +120,18 @@ const header = {
         <!--Start Contact Page Form-->
         <div class="w-full md:w-7/12 px-4">
           <div class="contact-page__form">
-            <form class="comment-one__form">
+            <div id="success01"></div>
+            <form class="comment-one__form" id="contact-form">
               <div class="flex flex-wrap -mx-4">
                 <div class="w-full md:w-1/2 px-4">
                   <div class="comment-form__input-box">
-                    <input type="text" placeholder="Nom" id="nom" name="nom" />
+                    <input
+                      type="text"
+                      placeholder="Nom"
+                      id="nom"
+                      name="nom"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="w-full md:w-1/2 px-4">
@@ -134,6 +141,7 @@ const header = {
                       placeholder="Adresse email"
                       name="email"
                       id="email"
+                      required
                     />
                   </div>
                 </div>
@@ -146,16 +154,18 @@ const header = {
                       placeholder="N° téléphone"
                       name="tel"
                       id="tel"
+                      required
                     />
                   </div>
                 </div>
                 <div class="w-full md:w-1/2 px-4">
                   <div class="comment-form__input-box">
                     <input
-                      type="email"
+                      type="text"
                       placeholder="Sujet"
                       name="sujet"
                       id="sujet"
+                      required
                     />
                   </div>
                 </div>
@@ -166,20 +176,22 @@ const header = {
                     <textarea
                       name="message"
                       id="message"
-                      placeholder="Votre message"></textarea>
+                      placeholder="Votre message"
+                      required></textarea>
                   </div>
-                  <div id="success01"></div>
                   <button
                     class="thm-btn comment-form__btn"
                     data-text="Envoyer"
-                    type="button"
-                    onclick="envoyerContact()">Envoyer</button
+                    type="submit"
                   >
+                    Envoyer
+                  </button>
                 </div>
               </div>
             </form>
           </div>
         </div>
+
         <!--End Contact Page Form-->
       </div>
     </div>
