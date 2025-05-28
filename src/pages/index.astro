@@ -299,12 +299,13 @@ const testimonials = [
             </div>
 
             <div class="form-box">
-              <form method="post" class="space-y-4">
+               <div id="success01"></div>
+              <form class="space-y-4" id="contact-form">
                 <div class="form-group">
                   <input
                     type="text"
                     name="nom"
-                    id="nom02"
+                    id="nom"
                     placeholder="Votre nom"
                     required
                     class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -315,7 +316,7 @@ const testimonials = [
                   <input
                     type="text"
                     name="tel"
-                    id="tel02"
+                    id="tel"
                     placeholder="N° téléphone"
                     required
                     class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -325,8 +326,10 @@ const testimonials = [
                 <div class="form-group">
                   <textarea
                     placeholder="Message"
-                    id="message02"
+                    id="message"
+                    name="message"
                     class="w-full h-32 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
                   ></textarea>
                 </div>
 
@@ -337,8 +340,8 @@ const testimonials = [
                       <button
                         class="thm-btn"
                         data-text="Envoyer"
-                        type="button"
-                        onclick="envoyerFormIndex()"
+                        type="submit"
+                  
                       >
                         Envoyer
                       </button>

@@ -37,13 +37,13 @@ import logo from "../../assets/images/logo-white-s-plomberie.png";
             <div class="form-inner">
               <div class="text-xl font-semibold">Demande de devis</div>
               <!-- replaced .h4 -->
-              <form action="" method="post">
+              <form action="" id="contact-form">
                 <div class="mb-4">
                   <!-- replaced .form-group -->
                   <input
                     type="text"
-                    name="nom03"
-                    id="nom03"
+                    name="nom"
+                    id="nom"
                     placeholder="Nom"
                     class="w-full border border-gray-300 rounded px-3 py-2"
                   />
@@ -52,8 +52,8 @@ import logo from "../../assets/images/logo-white-s-plomberie.png";
                   <!-- replaced .form-group -->
                   <input
                     type="text"
-                    name="tel03"
-                    id="tel03"
+                    name="tel"
+                    id="tel"
                     placeholder="N° téléphone"
                     class="w-full border border-gray-300 rounded px-3 py-2"
                   />
@@ -62,7 +62,7 @@ import logo from "../../assets/images/logo-white-s-plomberie.png";
                   <!-- replaced .form-group -->
                   <textarea
                     name="message"
-                    id="message03"
+                    id="message"
                     placeholder="Message..."
                     class="w-full border border-gray-300 rounded px-3 py-2"
                   ></textarea>
@@ -72,10 +72,10 @@ import logo from "../../assets/images/logo-white-s-plomberie.png";
                   <div id="success03"></div>
                   <div class="btn-box">
                     <button
-                      type="button"
+                      type="submit"
                       class="thm-btn"
                       data-text="Envoyer"
-                      onclick="envoyerFormSideBar()">Envoyer</button
+                      >Envoyer</button
                     >
                   </div>
                 </div>
