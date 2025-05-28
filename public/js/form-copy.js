@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     emailjs.init('Hj3sC7fOFKJuPj-GF'); // Your public key
   }
 
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form-sidebar');
   const messageBox = document.getElementById('success01');
 
   if (!form) {
