@@ -168,14 +168,15 @@ const current05 = isCurrent('/contact') ? 'current' : '';
         <div class="grid grid-cols-1 gap-4">
           <!--Start Contact Page Form-->
           <div>
-            <form class="comment-one__form">
+            <form class="comment-one__form" id="model-form">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="comment-form__input-box">
                   <input
                     type="text"
                     placeholder="Nom"
-                    name="nom04"
-                    id="nom04"
+                    name="nom"
+                    id="nom"
+                    required
                     class="w-full p-3 border border-gray-300 rounded"
                   />
                 </div>
@@ -183,8 +184,9 @@ const current05 = isCurrent('/contact') ? 'current' : '';
                   <input
                     type="email"
                     placeholder="Adresse email"
-                    name="email04"
-                    id="email04"
+                    name="email"
+                    id="email"
+                    required
                     class="w-full p-3 border border-gray-300 rounded"
                   />
                 </div>
@@ -194,8 +196,9 @@ const current05 = isCurrent('/contact') ? 'current' : '';
                   <input
                     type="text"
                     placeholder="N° téléphone"
-                    name="tel04"
-                    id="tel04"
+                    name="tel"
+                    id="tel"
+                    required
                     class="w-full p-3 border border-gray-300 rounded"
                   />
                 </div>
@@ -203,8 +206,9 @@ const current05 = isCurrent('/contact') ? 'current' : '';
                   <input
                     type="text"
                     placeholder="Sujet"
-                    name="sujet04"
-                    id="sujet04"
+                    name="sujet"
+                    id="sujet"
+                    required
                     class="w-full p-3 border border-gray-300 rounded"
                   />
                 </div>
@@ -212,16 +216,16 @@ const current05 = isCurrent('/contact') ? 'current' : '';
               <div class="mt-1">
                 <div class="comment-form__input-box">
                   <textarea
-                    name="message04"
-                    id="message04"
+                    name="message"
+                    id="message"
                     placeholder="Votre message"
+                    required
                     class="w-full p-3 border border-gray-300 rounded h-32 resize-none"
                   ></textarea>
                 </div>
                 <div id="success04" class="mt-2"></div>
                 <button
-                  type="button"
-                  onclick="envoyerDemandeDeDevis()"
+                  type="submit"
                   data-text="Envoyer"
                   class="thm-btn comment-form__btn mt-4"
                 >
